@@ -1,0 +1,57 @@
+/*
+ * style.css
+ * =========
+ * Global stylesheet for the PSO Traffic Optimization frontend.
+ *
+ * Uses Tailwind CSS v4 (imported via @tailwindcss/vite plugin).
+ * All component-level styling is done via inline styles in TSX files
+ * to keep layout logic co-located with components (research prototype pattern).
+ */
+
+@import "tailwindcss";
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+html,
+body,
+#root {
+  min-height: 100vh;
+  background: #020617;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── React Flow overrides ──────────────────────────────────── */
+.react-flow__controls {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls-button {
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #334155 !important;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
