@@ -27,7 +27,7 @@ from predictions import (
     ADITYA_INITIAL_GREEN_TIMES
 )
 from utils import format_congestion_table, compute_cycle_time_summary
-from qaoa import run_qaoa_optimization
+from final_qaoa_with_signal import run_final_qaoa_optimization as run_qaoa_optimization
 
 # ---------------------------------------------------------------------------
 # Application Initialisation
@@ -63,7 +63,7 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 # Shared Module Instances (constructed once at startup)
 # ---------------------------------------------------------------------------
-_pso:   PSO          = PSO(max_iter=50)
+_pso:   PSO          = PSO(max_iter=20)
 
 # Simple module-level cache for the last optimization result indexed by network type.
 # Replace with Redis or a database for production multi-user scenarios.

@@ -67,7 +67,7 @@ class PSO:
     def __init__(
         self,
         n_particles: int = 100,
-        max_iter: int = 50,
+        max_iter: int = 20,
         w: float = 0.7,
         c1: float = 1.5,
         c2: float = 1.5,
