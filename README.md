@@ -1,4 +1,4 @@
-# PSO Traffic Signal Optimization
+# Traffic Signal Optimization
 
 Research prototype for a novel Particle Swarm Optimization (PSO)-based traffic signal optimization framework. 
 
