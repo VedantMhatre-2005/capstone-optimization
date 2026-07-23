@@ -33,15 +33,7 @@ def calculate_threshold(
     Returns:
         float: Computed threshold (veh/hr).
     """
-    if network_type == "aditya":
-        return 0.60 * capacity
-
     if is_reference or road_type.lower() == "reference":
         return 0.0
 
-    rt = road_type.lower()
-    if rt == "arterial":
-        return 0.85 * capacity
-    elif rt == "expressway":
-        return 0.95 * capacity
-    return 0.0
+    return 0.60 * capacity

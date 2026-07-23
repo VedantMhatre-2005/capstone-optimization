@@ -187,8 +187,8 @@ def evaluate_and_verify_scenario(topology_name: str, G: nx.Graph, scenario: Dict
     t_graph.edges = []
     t_graph._edge_index = {}
     for (u, v), cap in norm_caps.items():
-        e1 = Edge(source=u, target=v, weight=1.0, capacity=cap, speed=50.0, lanes=3, length=1.0, road_type="Arterial", threshold=0.60)
-        e2 = Edge(source=v, target=u, weight=1.0, capacity=cap, speed=50.0, lanes=3, length=1.0, road_type="Arterial", threshold=0.60)
+        e1 = Edge(source=u, target=v, weight=1.0, capacity=cap, speed=50.0, lanes=3, length=1.0, road_type="Arterial", threshold=0.60 * cap)
+        e2 = Edge(source=v, target=u, weight=1.0, capacity=cap, speed=50.0, lanes=3, length=1.0, road_type="Arterial", threshold=0.60 * cap)
         t_graph.edges.extend([e1, e2])
         t_graph._edge_index[e1.id] = e1
         t_graph._edge_index[e2.id] = e2
@@ -201,8 +201,8 @@ def evaluate_and_verify_scenario(topology_name: str, G: nx.Graph, scenario: Dict
     pso_latency_ms = (t_pso_end - t_pso_start) * 1000.0
 
     pso_flows = pso_res["optimized_congestion"]
-    pso_occs = [pso_flows.get(f"{u}\u2192{v}", load) / cap for (u, v), cap in norm_caps.items() for load in [norm_loads[(u, v)]]]
-    pso_peak = max(pso_occs) * 100.0
+    pso_occs = [pso_flows.get(e.id, 0.0) / e.capacity for e in t_graph.edges if e.capacity > 0]
+    pso_peak = max(pso_occs) * 100.0 if pso_occs else init_peak
 
     return {
         "scenario_name": scenario["name"],
