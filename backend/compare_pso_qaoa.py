@@ -14,9 +14,14 @@ Compares:
   4. Overall System Metrics (Peak reduction %, Load distribution improvement %, Latency ms)
 """
 
+import sys
 import time
 import numpy as np
 from typing import Dict, Any
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 
 from graph import TrafficGraph
 from pso import PSO

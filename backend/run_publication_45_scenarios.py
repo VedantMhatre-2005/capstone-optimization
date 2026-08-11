@@ -7,12 +7,63 @@ Generates and runs 15 mathematically unique, realistic time-of-day traffic scena
 (4-node, 5-node, 6-node mesh networks) with a fixed random seed (2026) for exact reproducibility.
 """
 
+import os
 import sys
 import time
 import itertools
 import numpy as np
 import networkx as nx
+import matplotlib.pyplot as plt
 from typing import Dict, List, Tuple, Any
+
+
+def plot_topology_pso_convergences(all_topology_results: Dict[str, List[Dict[str, Any]]]):
+    """
+    Plot and save PSO convergence curves for 4-Node, 5-Node, and 6-Node networks across 15 scenarios.
+    """
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5.5), sharey=True)
+
+    for idx, (top_name, evals) in enumerate(all_topology_results.items()):
+        ax = axes[idx]
+        all_convergences = []
+
+        for ev in evals:
+            conv = ev["pso_convergence"]
+            all_convergences.append(conv)
+
+        conv_matrix = np.array(all_convergences)  # shape (15, N)
+        num_iterations = conv_matrix.shape[1]
+        iterations = list(range(num_iterations))
+
+        for conv in all_convergences:
+            ax.plot(iterations, conv, color='gray', alpha=0.3, linewidth=1.2)
+
+        mean_conv = np.mean(conv_matrix, axis=0)
+
+        ax.plot(
+            iterations, mean_conv,
+            marker='o', markersize=6, linewidth=2.5,
+            color='#1f77b4', label='Mean Convergence (15 Scenarios)'
+        )
+
+        ax.set_title(f"PSO Convergence: {top_name}", fontsize=13, fontweight='bold', pad=10)
+        ax.set_xlabel("Iteration", fontsize=11)
+        if idx == 0:
+            ax.set_ylabel("Fitness (Peak Congestion % + Penalty)", fontsize=11)
+
+        ax.grid(True, linestyle='--', alpha=0.6)
+        ax.legend(loc='upper right', fontsize=10)
+        ax.set_xticks(range(0, num_iterations, 2))
+
+    plt.suptitle("PSO Convergence Across Topologies (pso-final.py Logic)", fontsize=15, fontweight='bold', y=1.02)
+    plt.tight_layout()
+
+    output_path = "pso_convergence_4_5_6_nodes.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"\n[INFO] Convergence graph successfully saved to: {os.path.abspath(output_path)}")
+    plt.show()
+
+
 
 from graph import TrafficGraph, Node, Edge
 from pso import PSO
@@ -214,7 +265,8 @@ def evaluate_and_verify_scenario(topology_name: str, G: nx.Graph, scenario: Dict
         "pso_peak": pso_peak,
         "qaoa_peak": qaoa_peak,
         "qaoa_peak_red": qaoa_peak_red,
-        "opt_gap": opt_gap
+        "opt_gap": opt_gap,
+        "pso_convergence": pso_res["fitness_history"]
     }
 
 def execute_all_publication_benchmarks():
@@ -245,6 +297,8 @@ def execute_all_publication_benchmarks():
             print(f"{ev['scenario_name']:<42} | {b_str:<18} | {ev['num_packets']:<4} | {ev['num_alt_routes']:<6} | {ev['init_peak']:<8.1f}% | {ev['pso_peak']:<8.1f}% | {ev['qaoa_peak']:<8.1f}% | {ev['qaoa_peak_red']:<6.1f}% | {ev['opt_gap']:<9.1e}")
 
         all_topology_results[top_name] = top_evals
+
+    plot_topology_pso_convergences(all_topology_results)
 
     return all_topology_results
 

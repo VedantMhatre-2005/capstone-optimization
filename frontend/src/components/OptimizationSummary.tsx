@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
 import { OptimizationResponse } from '../types';
 
 interface OptimizationSummaryProps {
@@ -11,6 +20,7 @@ export const OptimizationSummary: React.FC<OptimizationSummaryProps> = ({ result
     iterations,
     initial_fitness,
     final_fitness,
+    fitness_history,
     cycle_times,
     green_times,
   } = result;
@@ -26,6 +36,11 @@ export const OptimizationSummary: React.FC<OptimizationSummaryProps> = ({ result
   const fitnessImprovement = initial_fitness && final_fitness 
     ? ((initial_fitness - final_fitness) / initial_fitness * 100).toFixed(2)
     : '0.00';
+
+  const convergenceData = fitness_history?.map((fit, iter) => ({
+    iteration: iter,
+    fitness: fit,
+  })) || [];
 
   return (
     <div className="bg-white p-6 shadow-md sm:rounded-lg mb-6 border border-gray-200">
@@ -50,10 +65,41 @@ export const OptimizationSummary: React.FC<OptimizationSummaryProps> = ({ result
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-6">
         <span className="font-semibold text-gray-700">Overall Fitness Improvement: </span>
         <span className="text-lg text-green-600 font-bold">{fitnessImprovement}%</span>
       </div>
+
+      {/* PSO Fitness Convergence Plot */}
+      {convergenceData.length > 0 && (
+        <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <h4 className="text-lg font-bold text-gray-800 mb-3 text-left">PSO Swarm Fitness Convergence Curve</h4>
+          <div className="h-[280px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={convergenceData} margin={{ top: 15, right: 30, left: 10, bottom: 20 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <XAxis 
+                  dataKey="iteration" 
+                  label={{ value: 'Iteration', position: 'bottom', offset: 5, style: { fontSize: '12px', fill: '#6b7280', fontWeight: 600 } }} 
+                />
+                <YAxis 
+                  label={{ value: 'Fitness (Peak % + Penalty)', angle: -90, position: 'left', offset: 10, style: { fontSize: '12px', fill: '#6b7280', fontWeight: 600 } }} 
+                />
+                <Tooltip formatter={(value: any) => [Number(value).toFixed(2), "Fitness"]} />
+                <Line 
+                  type="monotone" 
+                  dataKey="fitness" 
+                  stroke="#2563eb" 
+                  strokeWidth={3} 
+                  dot={{ r: 4, fill: '#2563eb' }} 
+                  activeDot={{ r: 7 }} 
+                  name="PSO Fitness" 
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
 
       <h4 className="text-lg font-semibold mb-3 text-gray-800">Cycle Times (seconds)</h4>
       <div className="overflow-x-auto">
@@ -69,7 +115,6 @@ export const OptimizationSummary: React.FC<OptimizationSummaryProps> = ({ result
           <tbody>
             {cycle_times && Object.entries(cycle_times).map(([node, data]) => {
               const diff = data.old - data.new;
-              // A negative change means it decreased. Improvement is subjective but we just show % change.
               const pctChange = ((data.new - data.old) / data.old * 100).toFixed(1);
               const colorClass = diff > 0 ? 'text-green-600' : diff < 0 ? 'text-red-600' : 'text-gray-500';
 
@@ -126,3 +171,4 @@ export const OptimizationSummary: React.FC<OptimizationSummaryProps> = ({ result
     </div>
   );
 };
+

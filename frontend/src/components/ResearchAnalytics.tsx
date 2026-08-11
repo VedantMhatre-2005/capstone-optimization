@@ -2,6 +2,8 @@ import React from 'react';
 import {
   BarChart,
   Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -34,6 +36,27 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
     const idx = history.findIndex(f => Math.abs(f - minFitness) < 1e-5);
     return idx >= 0 ? idx : 0;
   };
+
+  // Multi-scenario convergence line chart data
+  const maxIterLength = Math.max(...scenarios.map(s => s.fitnessHistory?.length || 0), 0);
+  const multiScenarioLineData = Array.from({ length: maxIterLength }, (_, iter) => {
+    const row: Record<string, any> = { iteration: iter };
+    let sumFit = 0;
+    let count = 0;
+    scenarios.forEach(s => {
+      if (s.fitnessHistory && iter < s.fitnessHistory.length) {
+        row[s.scenarioName] = s.fitnessHistory[iter];
+        sumFit += s.fitnessHistory[iter];
+        count++;
+      }
+    });
+    row['Mean'] = count > 0 ? sumFit / count : 0;
+    return row;
+  });
+
+  const scenarioColors = [
+    '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#06b6d4', '#f97316'
+  ];
 
   // Utility to trigger CSV download
   const downloadCSV = (filename: string, content: string) => {
@@ -69,10 +92,7 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
 
   // Global Export Results: downloads summary CSV and separate CSVs for each scenario's history
   const handleExportAll = () => {
-    // 1. Summary CSV
     handleExportSummary();
-
-    // 2. Sequential downloads for histories to prevent browser blocking
     scenarios.forEach((s, idx) => {
       setTimeout(() => {
         handleExportSingleHistory(s);
@@ -80,7 +100,6 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
     });
   };
 
-  // Custom Tooltip for Scatter Plot to show Scenario Name, Congested Edges, and Initial Fitness
   const CustomScatterTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
@@ -105,7 +124,6 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
           </div>
         </div>
 
-        {/* Textbox Input */}
         <div className="mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-inner">
           <div className="flex items-center space-x-3 w-full md:w-auto">
             <label htmlFor="scenario-name-input" className="text-gray-700 font-semibold shrink-0">Scenario Name:</label>
@@ -159,7 +177,6 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
         </div>
       </div>
 
-      {/* Textbox Input */}
       <div className="mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-inner">
         <div className="flex items-center space-x-3 w-full md:w-auto">
           <label htmlFor="scenario-name-input-active" className="text-gray-700 font-semibold shrink-0">Scenario Name:</label>
@@ -177,10 +194,37 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
         </div>
       </div>
 
-      {/* Grid of 4 cards (1 table, 3 charts) */}
+      {/* Grid of cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         
-        {/* 1. PSO Convergence Iterations Table */}
+        {/* 1. Multi-Scenario Convergence Line Chart */}
+        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 h-[360px]">
+          <h3 className="text-lg font-bold text-gray-800 mb-2 text-left">PSO Multi-Scenario Convergence Plot</h3>
+          <div className="h-[280px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={multiScenarioLineData} margin={{ top: 15, right: 30, left: 10, bottom: 20 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <XAxis dataKey="iteration" label={{ value: 'Iteration', position: 'bottom', offset: 5, style: { fontSize: '12px', fill: '#6b7280', fontWeight: 600 } }} />
+                <YAxis label={{ value: 'Fitness (Peak % + Penalty)', angle: -90, position: 'left', offset: 10, style: { fontSize: '12px', fill: '#6b7280', fontWeight: 600 } }} />
+                <Tooltip formatter={(value: any) => [Number(value).toFixed(2), "Fitness"]} />
+                <Legend verticalAlign="top" height={36} />
+                {scenarios.map((s, idx) => (
+                  <Line
+                    key={s.scenarioName}
+                    type="monotone"
+                    dataKey={s.scenarioName}
+                    stroke={scenarioColors[idx % scenarioColors.length]}
+                    strokeWidth={2}
+                    dot={{ r: 3 }}
+                    name={s.scenarioName}
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* 2. PSO Convergence Iterations Table */}
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 flex flex-col h-[360px]">
           <h3 className="text-lg font-bold text-gray-800 mb-3 text-left">PSO Convergence Iterations</h3>
           <div className="overflow-y-auto border border-gray-200 rounded-lg flex-grow bg-white shadow-inner">
@@ -206,7 +250,7 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
           </div>
         </div>
 
-        {/* 2. Initial vs Final Fitness */}
+        {/* 3. Initial vs Final Fitness */}
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 h-[360px]">
           <h3 className="text-lg font-bold text-gray-800 mb-4 text-left">Initial vs Final Fitness</h3>
           <div className="h-[280px] w-full">
@@ -224,7 +268,7 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
           </div>
         </div>
 
-        {/* 3. Percentage Fitness Improvement */}
+        {/* 4. Percentage Fitness Improvement */}
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 h-[360px]">
           <h3 className="text-lg font-bold text-gray-800 mb-4 text-left">Percentage Fitness Improvement</h3>
           <div className="h-[280px] w-full">
@@ -243,33 +287,6 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
                   />
                 </Bar>
               </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        {/* 4. Number of Congested Edges vs Fitness */}
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 h-[360px]">
-          <h3 className="text-lg font-bold text-gray-800 mb-4 text-left">Number of Congested Edges vs Fitness</h3>
-          <div className="h-[280px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <ScatterChart margin={{ top: 15, right: 30, left: 10, bottom: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis
-                  type="number"
-                  dataKey="congestedEdges"
-                  name="Congested Edges"
-                  label={{ value: 'Number of Congested Edges', position: 'bottom', offset: 5, style: { fontSize: '12px', fill: '#6b7280', fontWeight: 600 } }}
-                  allowDecimals={false}
-                />
-                <YAxis
-                  type="number"
-                  dataKey="initialFitness"
-                  name="Initial Fitness"
-                  label={{ value: 'Initial Fitness', angle: -90, position: 'left', offset: 0, style: { fontSize: '12px', fill: '#6b7280', fontWeight: 600 } }}
-                />
-                <Tooltip content={<CustomScatterTooltip />} />
-                <Scatter name="Scenarios" data={scenarios} fill="#f59e0b" shape="circle" line={false} />
-              </ScatterChart>
             </ResponsiveContainer>
           </div>
         </div>
@@ -318,3 +335,4 @@ export const ResearchAnalytics: React.FC<ResearchAnalyticsProps> = ({
     </div>
   );
 };
+
