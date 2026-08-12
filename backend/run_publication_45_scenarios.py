@@ -244,7 +244,7 @@ def evaluate_and_verify_scenario(topology_name: str, G: nx.Graph, scenario: Dict
         t_graph._edge_index[e1.id] = e1
         t_graph._edge_index[e2.id] = e2
 
-    pso = PSO(n_particles=50, max_iter=20, seed=42)
+    pso = PSO(n_particles=30, max_iter=20, seed=42)
     t_pso_start = time.perf_counter()
     init_cycles = {n: 60.0 for n in G_built.nodes()}
     pso_res = pso.optimize(t_graph, initial_congestion=dir_init_cong, initial_cycle_times=init_cycles)
