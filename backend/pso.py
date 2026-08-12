@@ -1,45 +1,61 @@
 """
 pso.py
 ======
-Particle Swarm Optimization engine for traffic signal optimization using pso-final.py logic.
+Discrete / Binary Particle Swarm Optimization (BPSO) engine for traffic rerouting.
+
+Operates on the EXACT SAME topology analysis, packet definitions, candidate routes,
+route-decoding logic (`apply_solution`), and QUBO objective function as QAOA (`final_qaoa_with_signal.py`).
 
 Algorithm Overview:
-    Each particle encodes candidate signal plan factors for all network edges:
-        position = [s_1, s_2, ..., s_E] ∈ [0, 1]^E
+    Each particle encodes candidate packet rerouting bitstrings for all N binary variables:
+        position = [x_1, x_2, ..., x_N] ∈ R^N
+        bitstring = [b_1, b_2, ..., b_N] ∈ {0, 1}^N via sigmoid thresholding
 
-    Velocities:
-        v_i = 0.5 * v_i + 1.5 * r1 * (pbest_i - position_i) + 1.5 * r2 * (gbest - position_i)
-        position_i = clip(position_i + v_i, 0, 1)
+    Velocities & Positions:
+        v_i = w * v_i + c1 * r1 * (pbest_i - position_i) + c2 * r2 * (gbest_i - position_i)
+        position_i = clip(position_i + v_i, -10.0, 10.0)
 
-    Traffic Redistribution (pso-final.py):
-        redistributed = base_traffic * (1 - 0.3 * position)
-        conserved_flow = (redistributed / sum(redistributed)) * sum(base_traffic)
-
-    Fitness (pso-final.py):
-        occs = conserved_flow / capacities
-        peak_congestion = max(occs) * 100.0
-        penalty = sum(max(occs - threshold_factor, 0))
-        fitness = peak_congestion + penalty
+    Route Decoding & Objective Evaluation:
+        Evaluates the exact QUBO cost H_B(b) and post-optimization edge loads via `apply_solution`.
 """
 
 import numpy as np
-from typing import Dict, List, Tuple
+import math
+from typing import Dict, List, Tuple, Any, Optional
 
 from graph import TrafficGraph
 from predictions import (
     INITIAL_CONGESTION,
     INITIAL_CYCLE_TIMES,
+    ADITYA_INITIAL_CYCLE_TIMES,
+)
+from final_qaoa_with_signal import (
+    build_network,
+    detect_congestion,
+    generate_alternate_routes,
+    generate_packets,
+    build_qubo,
+    apply_solution,
+    evaluate_network,
+    optimize_signals,
+    clean_edge_key,
+    normalize_edge,
 )
 
 
 class Particle:
-    """A single particle in the PSO swarm representing signal plan factors."""
+    """A single particle in the Binary PSO swarm representing route decisions."""
 
     def __init__(self, n_dims: int, rng: np.random.Generator) -> None:
-        self.position: np.ndarray = rng.uniform(0.0, 1.0, n_dims)
-        self.velocity: np.ndarray = np.zeros(n_dims)
+        self.position: np.ndarray = rng.uniform(-2.0, 2.0, n_dims)
+        self.velocity: np.ndarray = rng.uniform(-1.0, 1.0, n_dims)
         self.best_position: np.ndarray = self.position.copy()
+        self.best_bitstring: Tuple[int, ...] = self.to_bitstring()
         self.best_fitness: float = float("inf")
+
+    def to_bitstring(self) -> Tuple[int, ...]:
+        sig = 1.0 / (1.0 + np.exp(-np.clip(self.position, -10.0, 10.0)))
+        return tuple(int(b) for b in (sig >= 0.5))
 
     def update_velocity(
         self, global_best_position: np.ndarray, w: float, c1: float, c2: float, rng: np.random.Generator
@@ -50,9 +66,11 @@ class Particle:
         cognitive = c1 * r1 * (self.best_position - self.position)
         social = c2 * r2 * (global_best_position - self.position)
         self.velocity = w * self.velocity + cognitive + social
+        self.velocity = np.clip(self.velocity, -6.0, 6.0)
 
     def update_position(self) -> None:
-        self.position = np.clip(self.position + self.velocity, 0.0, 1.0)
+        self.position = self.position + self.velocity
+        self.position = np.clip(self.position, -10.0, 10.0)
 
 
 class PSO:
@@ -72,6 +90,7 @@ class PSO:
         self.c1 = c1
         self.c2 = c2
         self.threshold_factor = threshold_factor
+        self.seed = seed
         self.rng = np.random.default_rng(seed)
 
     def optimize(
@@ -84,66 +103,111 @@ class PSO:
         if initial_congestion is None:
             initial_congestion = graph.get_initial_predictions()
         if initial_cycle_times is None:
-            initial_cycle_times = INITIAL_CYCLE_TIMES.copy()
+            initial_cycle_times = ADITYA_INITIAL_CYCLE_TIMES.copy() if graph.network_type == "aditya" else INITIAL_CYCLE_TIMES.copy()
 
-        edges = graph.edges
-        num_edges = len(edges)
+        user_capacities = {e.id: e.capacity for e in graph.edges}
 
-        base_traffic = np.array([initial_congestion.get(e.id, 0.0) for e in edges], dtype=float)
-        capacities = np.array([e.capacity for e in edges], dtype=float)
-        total_traffic = float(np.sum(base_traffic))
+        # 1. Build network & normalize edge representations
+        G, capacities, predicted_loads = build_network(
+            graph=None,
+            capacities=user_capacities,
+            predicted_loads=initial_congestion,
+        )
 
-        def evaluate_particle(pos: np.ndarray) -> Tuple[float, Dict[str, float], Dict[str, float]]:
-            redistributed = base_traffic * (1.0 - 0.3 * pos)
-            if np.sum(redistributed) > 0 and total_traffic > 0:
-                redistributed = (redistributed / np.sum(redistributed)) * total_traffic
-            else:
-                redistributed = base_traffic.copy()
+        # 2. Detect congestion
+        occupancy, congested, underutilized = detect_congestion(capacities, predicted_loads)
 
-            caps_safe = np.where(capacities > 0, capacities, 1.0)
-            occs = np.where(capacities > 0, redistributed / caps_safe, 0.0)
+        # 3. Generate alternate detour routes (top 2 least occupied)
+        alt_routes = generate_alternate_routes(G, congested, occupancy, max_cutoff=3, top_k=2)
 
-            peak_congestion = float(np.max(occs)) * 100.0 if len(occs) > 0 else 0.0
-            penalty = float(np.sum(np.maximum(occs - self.threshold_factor, 0.0)))
-            fit = peak_congestion + penalty
+        # 4. Generate packets
+        packets, variables = generate_packets(
+            congested, predicted_loads, capacities, alt_routes,
+            target=0.50, packet_size=150.0, max_packets=10
+        )
 
-            opt_congestion = {edges[i].id: float(redistributed[i]) for i in range(num_edges)}
+        # Build lookup from tuple edge keys to graph string edge IDs
+        edge_map = {}
+        for edge in graph.edges:
+            norm = normalize_edge(edge.source, edge.target)
+            edge_map[norm] = edge.id
 
-            # Derive node cycle times bounded in [30, 120] seconds from signal plan
-            opt_cycle_times = {}
-            for node_id in graph.nodes:
-                incident_indices = [
-                    i for i, e in enumerate(edges) if e.target == node_id or e.source == node_id
-                ]
-                if incident_indices:
-                    avg_signal = float(np.mean(pos[incident_indices]))
-                else:
-                    avg_signal = 0.5
-                
-                # Base cycle time modified by signal plan
-                base_ct = initial_cycle_times.get(node_id, 60.0)
-                ct_val = base_ct * (1.0 + 0.3 * (avg_signal - 0.5))
-                opt_cycle_times[node_id] = float(np.clip(ct_val, 30.0, 120.0))
+        N = len(variables)
+        non_ref_edges = graph.get_non_reference_edges()
+        desired_congestion = (
+            sum(e.threshold for e in non_ref_edges) / len(non_ref_edges) if non_ref_edges else 0.0
+        )
 
-            return fit, opt_cycle_times, opt_congestion
+        # Fallback if no congested packets generated
+        if N == 0 or not variables:
+            opt_cong = {e.id: float(initial_congestion.get(e.id, 0.0)) for e in graph.edges}
+            opt_ct = initial_cycle_times.copy()
+            return {
+                "optimized_cycle_times": opt_ct,
+                "optimized_congestion":  opt_cong,
+                "fitness_history":       [0.0],
+                "initial_fitness":       0.0,
+                "final_fitness":         0.0,
+                "iterations":            0,
+                "desired_congestion":    desired_congestion,
+                "gbest_signal_plan":     [],
+                "gbest_bitstring":       (),
+            }
 
-        # Evaluate initial baseline fitness (signal plan = zeros or baseline)
-        initial_fitness, _, _ = evaluate_particle(np.zeros(num_edges))
+        # 5. Build QUBO
+        qubo_problem = build_qubo(variables, capacities, occupancy, target=0.50, packet_size=150.0)
+        C = qubo_problem["constant"]
+        L = qubo_problem["linear"]
+        Q = qubo_problem["quadratic"]
+        var_names = [v["name"] for v in variables]
+
+        def compute_qubo_cost(bitstring: Tuple[int, ...]) -> float:
+            val = C
+            for i, name in enumerate(var_names):
+                val += L.get(name, 0.0) * bitstring[i]
+            for i in range(N):
+                for j in range(i + 1, N):
+                    pair = tuple(sorted((var_names[i], var_names[j])))
+                    val += Q.get(pair, 0.0) * bitstring[i] * bitstring[j]
+            return float(val)
+
+        def evaluate_bitstring(bitstring: Tuple[int, ...]) -> Tuple[float, Dict[str, float], Dict[str, float]]:
+            cost = compute_qubo_cost(bitstring)
+            up_loads = apply_solution(packets, bitstring, predicted_loads, packet_size=150.0)
+
+            # Map updated tuple flows back to string edge IDs in graph
+            opt_cong = {}
+            for edge in graph.edges:
+                norm_e = normalize_edge(edge.source, edge.target)
+                opt_cong[edge.id] = float(up_loads.get(norm_e, initial_congestion.get(edge.id, 0.0)))
+
+            # Signal cycle times
+            opt_ct = {node_id: float(initial_cycle_times.get(node_id, 90.0)) for node_id in graph.nodes}
+
+            return cost, opt_ct, opt_cong
+
+        # Initial baseline fitness (bitstring = all 0s)
+        initial_bitstring = tuple([0] * N)
+        initial_fitness, _, _ = evaluate_bitstring(initial_bitstring)
 
         # Initialise Swarm
-        particles: List[Particle] = [Particle(num_edges, self.rng) for _ in range(self.n_particles)]
+        particles: List[Particle] = [Particle(N, self.rng) for _ in range(self.n_particles)]
 
         global_best_fitness: float = float("inf")
         global_best_position: np.ndarray = particles[0].position.copy()
+        global_best_bitstring: Tuple[int, ...] = initial_bitstring
 
         # Initial evaluation
         for p in particles:
-            fit, _, _ = evaluate_particle(p.position)
+            bits = p.to_bitstring()
+            fit, _, _ = evaluate_bitstring(bits)
             p.best_fitness = fit
             p.best_position = p.position.copy()
+            p.best_bitstring = bits
             if fit < global_best_fitness:
                 global_best_fitness = fit
                 global_best_position = p.position.copy()
+                global_best_bitstring = bits
 
         fitness_history: List[float] = [initial_fitness]
 
@@ -153,25 +217,23 @@ class PSO:
                 p.update_velocity(global_best_position, self.w, self.c1, self.c2, self.rng)
                 p.update_position()
 
-                fit, _, _ = evaluate_particle(p.position)
+                bits = p.to_bitstring()
+                fit, _, _ = evaluate_bitstring(bits)
 
                 if fit < p.best_fitness:
                     p.best_fitness = fit
                     p.best_position = p.position.copy()
+                    p.best_bitstring = bits
 
                 if fit < global_best_fitness:
                     global_best_fitness = fit
                     global_best_position = p.position.copy()
+                    global_best_bitstring = bits
 
             fitness_history.append(global_best_fitness)
 
         # Extract Best Results
-        final_fitness, optimized_cycle_times, optimized_congestion = evaluate_particle(global_best_position)
-
-        non_ref_edges = graph.get_non_reference_edges()
-        desired_congestion = (
-            sum(e.threshold for e in non_ref_edges) / len(non_ref_edges) if non_ref_edges else 0.0
-        )
+        final_fitness, optimized_cycle_times, optimized_congestion = evaluate_bitstring(global_best_bitstring)
 
         return {
             "optimized_cycle_times": optimized_cycle_times,
@@ -181,6 +243,6 @@ class PSO:
             "final_fitness":         final_fitness,
             "iterations":            self.max_iter,
             "desired_congestion":    desired_congestion,
-            "gbest_signal_plan":     global_best_position.tolist(),
+            "gbest_signal_plan":     list(global_best_bitstring),
+            "gbest_bitstring":       global_best_bitstring,
         }
-
