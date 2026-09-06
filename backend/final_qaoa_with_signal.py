@@ -336,6 +336,7 @@ def solve_qaoa(
     packet_size: float = 150.0,
     reps: int = 1,
     maxiter: int = 50,
+    use_brute_force: bool = False,
 ) -> Dict[str, Any]:
     """
     Solve QUBO problem using Qiskit QAOA with StatevectorSampler and COBYLA.
@@ -359,7 +360,7 @@ def solve_qaoa(
     )
 
     N = len(variables)
-    if N <= 10:
+    if use_brute_force and N <= 10:
         import itertools
         best_bitstring = None
         best_peak = float("inf")

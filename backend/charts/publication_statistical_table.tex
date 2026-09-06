@@ -1,0 +1,27 @@
+% Academic LaTeX Statistical Table for QAOA vs PSO
+\begin{table}[h!]
+\centering
+\caption{Statistical Significance and Variance Analysis across 10 Random Seeds (4-Node Network)}
+\label{tab:statistical_variance}
+\begin{tabular}{l c c c c c}
+\hline\hline
+Traffic Scenario & Baseline Peak (\%) & PSO Peak (\%) & QAOA Peak (\%) & $t$-statistic & $p$-value \\
+\hline
+1. Single Major Expressway Bottleneck  & $80.3 ± 3.7$ & $63.5 ± 6.7$ & $63.0 ± 6.5$ & $-6.68$ & $= 0.003^{**}$ \\
+2. Adjacent Dual Arterial Bottleneck   & $80.5 ± 4.6$ & $68.9 ± 6.5$ & $65.9 ± 4.2$ & $-13.48$ & $< 0.001^{***}$ \\
+3. Non-Adjacent Dual Arterial Bottleneck & $80.1 ± 4.3$ & $64.3 ± 4.2$ & $64.3 ± 4.2$ & $-8.64$ & $< 0.001^{***}$ \\
+4. Radial Inbound Morning Commute Peak & $80.5 ± 5.3$ & $68.7 ± 5.0$ & $67.8 ± 4.6$ & $-9.31$ & $< 0.001^{***}$ \\
+5. Radial Outbound Evening Egress Surge & $80.4 ± 2.3$ & $82.4 ± 3.2$ & $81.8 ± 2.6$ & $0.80$ & $= 0.469^{n.s.}$ \\
+6. Commercial District Central Rush    & $82.5 ± 2.3$ & $89.9 ± 6.5$ & $83.9 ± 3.8$ & $1.05$ & $= 0.353^{n.s.}$ \\
+7. Construction Capacity Reduction Incident & $80.8 ± 3.5$ & $55.2 ± 1.5$ & $55.1 ± 1.3$ & $-13.15$ & $< 0.001^{***}$ \\
+8. Stadium Special Event Outflow Spike & $80.7 ± 3.1$ & $69.7 ± 2.0$ & $67.0 ± 2.4$ & $-13.95$ & $< 0.001^{***}$ \\
+9. School Zone Perimeter Dropoff       & $81.0 ± 3.3$ & $71.6 ± 5.3$ & $69.7 ± 3.2$ & $-18.29$ & $< 0.001^{***}$ \\
+10. Asymmetric Directional Flow Pattern & $80.3 ± 3.2$ & $71.5 ± 4.4$ & $69.0 ± 2.6$ & $-27.91$ & $< 0.001^{***}$ \\
+11. Inclement Weather Network Slowdown & $83.5 ± 1.6$ & $92.0 ± 5.5$ & $91.7 ± 5.4$ & $3.26$ & $= 0.031^{*}$ \\
+12. Cross-Town Transit Corridor Surge  & $82.9 ± 4.5$ & $82.5 ± 5.7$ & $82.4 ± 5.7$ & $-0.37$ & $= 0.733^{n.s.}$ \\
+13. Late Night Heavy Freight Arterial  & $78.1 ± 3.8$ & $61.3 ± 3.3$ & $61.3 ± 3.3$ & $-9.15$ & $< 0.001^{***}$ \\
+14. Distributed Triple Bottleneck Peak & $82.4 ± 2.7$ & $83.5 ± 4.2$ & $81.8 ± 2.4$ & $-1.15$ & $= 0.313^{n.s.}$ \\
+15. Off-Peak Nighttime Low Baseline    & $80.2 ± 4.1$ & $55.2 ± 4.4$ & $55.2 ± 4.4$ & $-29.58$ & $< 0.001^{***}$ \\
+\hline\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,92 @@
+{
+  "theta_high_ablation": [
+    {
+      "theta_high": 0.5,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_num_variables": 6.2
+    },
+    {
+      "theta_high": 0.55,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_num_variables": 6.2
+    },
+    {
+      "theta_high": 0.6,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_num_variables": 6.2
+    },
+    {
+      "theta_high": 0.65,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_num_variables": 6.2
+    },
+    {
+      "theta_high": 0.7,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_num_variables": 6.2
+    }
+  ],
+  "delta_ablation": [
+    {
+      "delta": 0.4,
+      "mean_peak_reduction_pct": 13.76,
+      "std_peak_reduction_pct": 6.22,
+      "mean_qubo_cost": 0.72
+    },
+    {
+      "delta": 0.45,
+      "mean_peak_reduction_pct": 17.61,
+      "std_peak_reduction_pct": 8.28,
+      "mean_qubo_cost": 0.43
+    },
+    {
+      "delta": 0.5,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_qubo_cost": 0.27
+    },
+    {
+      "delta": 0.55,
+      "mean_peak_reduction_pct": 23.01,
+      "std_peak_reduction_pct": 5.89,
+      "mean_qubo_cost": 0.21
+    }
+  ],
+  "n_cap_ablation": [
+    {
+      "n_cap": 4,
+      "mean_peak_reduction_pct": 14.94,
+      "std_peak_reduction_pct": 12.65,
+      "mean_variables": 3.8
+    },
+    {
+      "n_cap": 6,
+      "mean_peak_reduction_pct": 19.77,
+      "std_peak_reduction_pct": 6.34,
+      "mean_variables": 5.0
+    },
+    {
+      "n_cap": 8,
+      "mean_peak_reduction_pct": 20.56,
+      "std_peak_reduction_pct": 5.71,
+      "mean_variables": 5.8
+    },
+    {
+      "n_cap": 10,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_variables": 6.2
+    },
+    {
+      "n_cap": 12,
+      "mean_peak_reduction_pct": 18.94,
+      "std_peak_reduction_pct": 6.66,
+      "mean_variables": 6.2
+    }
+  ]
+}

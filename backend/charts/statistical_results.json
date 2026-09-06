@@ -1,0 +1,3428 @@
+{
+  "4-Node Mesh": [
+    {
+      "scenario_name": "1. Single Major Expressway Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.33,
+        "std": 3.73,
+        "sem": 1.67,
+        "ci_margin": 4.63,
+        "ci_low": 75.69,
+        "ci_high": 84.96,
+        "formatted_sd": "80.3 \u00b1 3.7",
+        "formatted_ci": "[75.7, 85.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 63.48,
+        "std": 6.69,
+        "sem": 2.99,
+        "ci_margin": 8.31,
+        "ci_low": 55.18,
+        "ci_high": 71.79,
+        "formatted_sd": "63.5 \u00b1 6.7",
+        "formatted_ci": "[55.2, 71.8]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 63.05,
+        "std": 6.53,
+        "sem": 2.92,
+        "ci_margin": 8.1,
+        "ci_low": 54.95,
+        "ci_high": 71.15,
+        "formatted_sd": "63.0 \u00b1 6.5",
+        "formatted_ci": "[54.9, 71.2]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 20.96,
+        "std": 7.69,
+        "sem": 3.44,
+        "ci_margin": 9.55,
+        "ci_low": 11.41,
+        "ci_high": 30.52,
+        "formatted_sd": "21.0 \u00b1 7.7",
+        "formatted_ci": "[11.4, 30.5]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 21.52,
+        "std": 7.34,
+        "sem": 3.28,
+        "ci_margin": 9.11,
+        "ci_low": 12.41,
+        "ci_high": 30.63,
+        "formatted_sd": "21.5 \u00b1 7.3",
+        "formatted_ci": "[12.4, 30.6]"
+      },
+      "t_stat": -6.68,
+      "p_value": 0.00260671738467272,
+      "significance": "**",
+      "cohen_d": 2.99,
+      "raw_qaoa_reds": [
+        12.50488211478924,
+        18.74506781185193,
+        18.542395215650487,
+        26.809561944162553,
+        30.982931135962318
+      ],
+      "raw_pso_reds": [
+        12.50488211478924,
+        15.984014042769568,
+        18.542395215650487,
+        26.809561944162553,
+        30.982931135962318
+      ]
+    },
+    {
+      "scenario_name": "2. Adjacent Dual Arterial Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.47,
+        "std": 4.62,
+        "sem": 2.07,
+        "ci_margin": 5.74,
+        "ci_low": 74.73,
+        "ci_high": 86.21,
+        "formatted_sd": "80.5 \u00b1 4.6",
+        "formatted_ci": "[74.7, 86.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 68.94,
+        "std": 6.51,
+        "sem": 2.91,
+        "ci_margin": 8.09,
+        "ci_low": 60.85,
+        "ci_high": 77.03,
+        "formatted_sd": "68.9 \u00b1 6.5",
+        "formatted_ci": "[60.9, 77.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 65.93,
+        "std": 4.18,
+        "sem": 1.87,
+        "ci_margin": 5.19,
+        "ci_low": 60.74,
+        "ci_high": 71.11,
+        "formatted_sd": "65.9 \u00b1 4.2",
+        "formatted_ci": "[60.7, 71.1]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 14.36,
+        "std": 5.85,
+        "sem": 2.62,
+        "ci_margin": 7.27,
+        "ci_low": 7.1,
+        "ci_high": 21.63,
+        "formatted_sd": "14.4 \u00b1 5.9",
+        "formatted_ci": "[7.1, 21.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 18.06,
+        "std": 2.7,
+        "sem": 1.21,
+        "ci_margin": 3.35,
+        "ci_low": 14.71,
+        "ci_high": 21.41,
+        "formatted_sd": "18.1 \u00b1 2.7",
+        "formatted_ci": "[14.7, 21.4]"
+      },
+      "t_stat": -13.48,
+      "p_value": 0.00017535742876390067,
+      "significance": "***",
+      "cohen_d": 6.03,
+      "raw_qaoa_reds": [
+        19.828424923666226,
+        18.28819298753642,
+        13.746704216678102,
+        17.699545749513305,
+        20.73541609068288
+      ],
+      "raw_pso_reds": [
+        11.567855984629233,
+        18.28819298753642,
+        5.3268198176814385,
+        17.699545749513305,
+        18.940074647497912
+      ]
+    },
+    {
+      "scenario_name": "3. Non-Adjacent Dual Arterial Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.12,
+        "std": 4.34,
+        "sem": 1.94,
+        "ci_margin": 5.39,
+        "ci_low": 74.73,
+        "ci_high": 85.51,
+        "formatted_sd": "80.1 \u00b1 4.3",
+        "formatted_ci": "[74.7, 85.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 64.31,
+        "std": 4.23,
+        "sem": 1.89,
+        "ci_margin": 5.25,
+        "ci_low": 59.06,
+        "ci_high": 69.56,
+        "formatted_sd": "64.3 \u00b1 4.2",
+        "formatted_ci": "[59.1, 69.6]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 64.31,
+        "std": 4.23,
+        "sem": 1.89,
+        "ci_margin": 5.25,
+        "ci_low": 59.06,
+        "ci_high": 69.56,
+        "formatted_sd": "64.3 \u00b1 4.2",
+        "formatted_ci": "[59.1, 69.6]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 19.67,
+        "std": 4.78,
+        "sem": 2.14,
+        "ci_margin": 5.94,
+        "ci_low": 13.73,
+        "ci_high": 25.61,
+        "formatted_sd": "19.7 \u00b1 4.8",
+        "formatted_ci": "[13.7, 25.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 19.67,
+        "std": 4.78,
+        "sem": 2.14,
+        "ci_margin": 5.94,
+        "ci_low": 13.73,
+        "ci_high": 25.61,
+        "formatted_sd": "19.7 \u00b1 4.8",
+        "formatted_ci": "[13.7, 25.6]"
+      },
+      "t_stat": -8.64,
+      "p_value": 0.000985242666827624,
+      "significance": "***",
+      "cohen_d": 3.87,
+      "raw_qaoa_reds": [
+        23.192936022633933,
+        22.555829654635172,
+        21.43729787998562,
+        19.722089694656486,
+        11.4436288349332
+      ],
+      "raw_pso_reds": [
+        23.192936022633933,
+        22.555829654635172,
+        21.43729787998562,
+        19.722089694656486,
+        11.4436288349332
+      ]
+    },
+    {
+      "scenario_name": "4. Radial Inbound Morning Commute Peak",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.51,
+        "std": 5.31,
+        "sem": 2.38,
+        "ci_margin": 6.6,
+        "ci_low": 73.91,
+        "ci_high": 87.11,
+        "formatted_sd": "80.5 \u00b1 5.3",
+        "formatted_ci": "[73.9, 87.1]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 68.74,
+        "std": 5.05,
+        "sem": 2.26,
+        "ci_margin": 6.26,
+        "ci_low": 62.47,
+        "ci_high": 75.0,
+        "formatted_sd": "68.7 \u00b1 5.0",
+        "formatted_ci": "[62.5, 75.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 67.81,
+        "std": 4.59,
+        "sem": 2.05,
+        "ci_margin": 5.7,
+        "ci_low": 62.1,
+        "ci_high": 73.51,
+        "formatted_sd": "67.8 \u00b1 4.6",
+        "formatted_ci": "[62.1, 73.5]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 14.63,
+        "std": 2.52,
+        "sem": 1.13,
+        "ci_margin": 3.13,
+        "ci_low": 11.5,
+        "ci_high": 17.76,
+        "formatted_sd": "14.6 \u00b1 2.5",
+        "formatted_ci": "[11.5, 17.8]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 15.73,
+        "std": 3.29,
+        "sem": 1.47,
+        "ci_margin": 4.09,
+        "ci_low": 11.65,
+        "ci_high": 19.82,
+        "formatted_sd": "15.7 \u00b1 3.3",
+        "formatted_ci": "[11.6, 19.8]"
+      },
+      "t_stat": -9.31,
+      "p_value": 0.0007407781374058496,
+      "significance": "***",
+      "cohen_d": 4.16,
+      "raw_qaoa_reds": [
+        13.412032622936204,
+        13.248853562961735,
+        20.548921322915128,
+        13.653331727750487,
+        17.810199789695062
+      ],
+      "raw_pso_reds": [
+        13.412032622936204,
+        13.248853562961735,
+        16.75880878667258,
+        11.913711390750123,
+        17.810199789695062
+      ]
+    },
+    {
+      "scenario_name": "5. Radial Outbound Evening Egress Surge",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.35,
+        "std": 2.28,
+        "sem": 1.02,
+        "ci_margin": 2.84,
+        "ci_low": 77.52,
+        "ci_high": 83.19,
+        "formatted_sd": "80.4 \u00b1 2.3",
+        "formatted_ci": "[77.5, 83.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 82.35,
+        "std": 3.18,
+        "sem": 1.42,
+        "ci_margin": 3.95,
+        "ci_low": 78.4,
+        "ci_high": 86.31,
+        "formatted_sd": "82.4 \u00b1 3.2",
+        "formatted_ci": "[78.4, 86.3]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 81.85,
+        "std": 2.64,
+        "sem": 1.18,
+        "ci_margin": 3.28,
+        "ci_low": 78.57,
+        "ci_high": 85.12,
+        "formatted_sd": "81.8 \u00b1 2.6",
+        "formatted_ci": "[78.6, 85.1]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": -2.58,
+        "std": 5.61,
+        "sem": 2.51,
+        "ci_margin": 6.97,
+        "ci_low": -9.55,
+        "ci_high": 4.38,
+        "formatted_sd": "-2.6 \u00b1 5.6",
+        "formatted_ci": "[-9.6, 4.4]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": -1.96,
+        "std": 5.33,
+        "sem": 2.38,
+        "ci_margin": 6.62,
+        "ci_low": -8.58,
+        "ci_high": 4.66,
+        "formatted_sd": "-2.0 \u00b1 5.3",
+        "formatted_ci": "[-8.6, 4.7]"
+      },
+      "t_stat": 0.8,
+      "p_value": 0.4686928611358744,
+      "significance": "n.s.",
+      "cohen_d": -0.36,
+      "raw_qaoa_reds": [
+        -2.2575330817877455,
+        4.7996445858368935,
+        -2.6811770049715964,
+        0.20874647740319976,
+        -9.881161793435526
+      ],
+      "raw_pso_reds": [
+        -2.2575330817877455,
+        4.7996445858368935,
+        -5.794446355570852,
+        0.20874647740319976,
+        -9.881161793435526
+      ]
+    },
+    {
+      "scenario_name": "6. Commercial District Central Rush",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.51,
+        "std": 2.27,
+        "sem": 1.01,
+        "ci_margin": 2.81,
+        "ci_low": 79.7,
+        "ci_high": 85.33,
+        "formatted_sd": "82.5 \u00b1 2.3",
+        "formatted_ci": "[79.7, 85.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 89.85,
+        "std": 6.54,
+        "sem": 2.92,
+        "ci_margin": 8.12,
+        "ci_low": 81.73,
+        "ci_high": 97.97,
+        "formatted_sd": "89.9 \u00b1 6.5",
+        "formatted_ci": "[81.7, 98.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 83.86,
+        "std": 3.76,
+        "sem": 1.68,
+        "ci_margin": 4.67,
+        "ci_low": 79.19,
+        "ci_high": 88.54,
+        "formatted_sd": "83.9 \u00b1 3.8",
+        "formatted_ci": "[79.2, 88.5]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": -8.83,
+        "std": 6.12,
+        "sem": 2.74,
+        "ci_margin": 7.59,
+        "ci_low": -16.42,
+        "ci_high": -1.24,
+        "formatted_sd": "-8.8 \u00b1 6.1",
+        "formatted_ci": "[-16.4, -1.2]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": -1.63,
+        "std": 3.43,
+        "sem": 1.53,
+        "ci_margin": 4.26,
+        "ci_low": -5.89,
+        "ci_high": 2.63,
+        "formatted_sd": "-1.6 \u00b1 3.4",
+        "formatted_ci": "[-5.9, 2.6]"
+      },
+      "t_stat": 1.05,
+      "p_value": 0.35284032105029167,
+      "significance": "n.s.",
+      "cohen_d": -0.47,
+      "raw_qaoa_reds": [
+        0.0,
+        -2.1783026372147285,
+        -7.333587473901056,
+        1.3583333333333296,
+        0.0
+      ],
+      "raw_pso_reds": [
+        0.0,
+        -11.356544086153113,
+        -16.77642508157563,
+        -7.391666666666671,
+        -8.62161130202368
+      ]
+    },
+    {
+      "scenario_name": "7. Construction Capacity Reduction Incident",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.79,
+        "std": 3.53,
+        "sem": 1.58,
+        "ci_margin": 4.38,
+        "ci_low": 76.4,
+        "ci_high": 85.17,
+        "formatted_sd": "80.8 \u00b1 3.5",
+        "formatted_ci": "[76.4, 85.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 55.22,
+        "std": 1.51,
+        "sem": 0.67,
+        "ci_margin": 1.87,
+        "ci_low": 53.35,
+        "ci_high": 57.09,
+        "formatted_sd": "55.2 \u00b1 1.5",
+        "formatted_ci": "[53.4, 57.1]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 55.07,
+        "std": 1.34,
+        "sem": 0.6,
+        "ci_margin": 1.66,
+        "ci_low": 53.41,
+        "ci_high": 56.73,
+        "formatted_sd": "55.1 \u00b1 1.3",
+        "formatted_ci": "[53.4, 56.7]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 31.5,
+        "std": 4.43,
+        "sem": 1.98,
+        "ci_margin": 5.51,
+        "ci_low": 25.99,
+        "ci_high": 37.0,
+        "formatted_sd": "31.5 \u00b1 4.4",
+        "formatted_ci": "[26.0, 37.0]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 31.7,
+        "std": 4.13,
+        "sem": 1.85,
+        "ci_margin": 5.12,
+        "ci_low": 26.58,
+        "ci_high": 36.82,
+        "formatted_sd": "31.7 \u00b1 4.1",
+        "formatted_ci": "[26.6, 36.8]"
+      },
+      "t_stat": -13.15,
+      "p_value": 0.00019321436664286197,
+      "significance": "***",
+      "cohen_d": 5.88,
+      "raw_qaoa_reds": [
+        28.019595245743663,
+        35.56695992179864,
+        35.747312918272165,
+        26.910356832027848,
+        32.25708193725251
+      ],
+      "raw_pso_reds": [
+        28.019595245743663,
+        35.56695992179864,
+        35.747312918272165,
+        25.896036078803704,
+        32.25708193725251
+      ]
+    },
+    {
+      "scenario_name": "8. Stadium Special Event Outflow Spike",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.67,
+        "std": 3.08,
+        "sem": 1.38,
+        "ci_margin": 3.83,
+        "ci_low": 76.84,
+        "ci_high": 84.49,
+        "formatted_sd": "80.7 \u00b1 3.1",
+        "formatted_ci": "[76.8, 84.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 69.7,
+        "std": 2.0,
+        "sem": 0.89,
+        "ci_margin": 2.48,
+        "ci_low": 67.22,
+        "ci_high": 72.18,
+        "formatted_sd": "69.7 \u00b1 2.0",
+        "formatted_ci": "[67.2, 72.2]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 66.96,
+        "std": 2.45,
+        "sem": 1.09,
+        "ci_margin": 3.04,
+        "ci_low": 63.92,
+        "ci_high": 70.0,
+        "formatted_sd": "67.0 \u00b1 2.4",
+        "formatted_ci": "[63.9, 70.0]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 13.56,
+        "std": 1.86,
+        "sem": 0.83,
+        "ci_margin": 2.31,
+        "ci_low": 11.25,
+        "ci_high": 15.88,
+        "formatted_sd": "13.6 \u00b1 1.9",
+        "formatted_ci": "[11.2, 15.9]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 16.96,
+        "std": 2.44,
+        "sem": 1.09,
+        "ci_margin": 3.03,
+        "ci_low": 13.93,
+        "ci_high": 20.0,
+        "formatted_sd": "17.0 \u00b1 2.4",
+        "formatted_ci": "[13.9, 20.0]"
+      },
+      "t_stat": -13.95,
+      "p_value": 0.00015331256753544275,
+      "significance": "***",
+      "cohen_d": 6.24,
+      "raw_qaoa_reds": [
+        13.403006733963863,
+        16.349317012160306,
+        19.897857663991516,
+        18.43161683277962,
+        16.7386476320038
+      ],
+      "raw_pso_reds": [
+        12.973382384765195,
+        16.349317012160306,
+        13.254294620945817,
+        14.016769498497073,
+        11.220589560984399
+      ]
+    },
+    {
+      "scenario_name": "9. School Zone Perimeter Dropoff",
+      "init_stats": {
+        "n": 5,
+        "mean": 81.05,
+        "std": 3.34,
+        "sem": 1.49,
+        "ci_margin": 4.14,
+        "ci_low": 76.91,
+        "ci_high": 85.19,
+        "formatted_sd": "81.0 \u00b1 3.3",
+        "formatted_ci": "[76.9, 85.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 71.61,
+        "std": 5.3,
+        "sem": 2.37,
+        "ci_margin": 6.59,
+        "ci_low": 65.02,
+        "ci_high": 78.2,
+        "formatted_sd": "71.6 \u00b1 5.3",
+        "formatted_ci": "[65.0, 78.2]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 69.73,
+        "std": 3.17,
+        "sem": 1.42,
+        "ci_margin": 3.94,
+        "ci_low": 65.8,
+        "ci_high": 73.67,
+        "formatted_sd": "69.7 \u00b1 3.2",
+        "formatted_ci": "[65.8, 73.7]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 11.73,
+        "std": 3.24,
+        "sem": 1.45,
+        "ci_margin": 4.02,
+        "ci_low": 7.71,
+        "ci_high": 15.76,
+        "formatted_sd": "11.7 \u00b1 3.2",
+        "formatted_ci": "[7.7, 15.8]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 13.96,
+        "std": 1.67,
+        "sem": 0.74,
+        "ci_margin": 2.07,
+        "ci_low": 11.89,
+        "ci_high": 16.03,
+        "formatted_sd": "14.0 \u00b1 1.7",
+        "formatted_ci": "[11.9, 16.0]"
+      },
+      "t_stat": -18.29,
+      "p_value": 5.2577124529659494e-05,
+      "significance": "***",
+      "cohen_d": 8.18,
+      "raw_qaoa_reds": [
+        14.632585912746768,
+        12.676390115690378,
+        16.367430566095006,
+        12.172579006617063,
+        13.960529729474741
+      ],
+      "raw_pso_reds": [
+        7.403652815013391,
+        12.676390115690378,
+        16.367430566095006,
+        11.325883418906681,
+        10.88822849595509
+      ]
+    },
+    {
+      "scenario_name": "10. Asymmetric Directional Flow Pattern",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.35,
+        "std": 3.22,
+        "sem": 1.44,
+        "ci_margin": 3.99,
+        "ci_low": 76.35,
+        "ci_high": 84.34,
+        "formatted_sd": "80.3 \u00b1 3.2",
+        "formatted_ci": "[76.4, 84.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 71.47,
+        "std": 4.44,
+        "sem": 1.99,
+        "ci_margin": 5.51,
+        "ci_low": 65.96,
+        "ci_high": 76.98,
+        "formatted_sd": "71.5 \u00b1 4.4",
+        "formatted_ci": "[66.0, 77.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 69.04,
+        "std": 2.62,
+        "sem": 1.17,
+        "ci_margin": 3.25,
+        "ci_low": 65.79,
+        "ci_high": 72.29,
+        "formatted_sd": "69.0 \u00b1 2.6",
+        "formatted_ci": "[65.8, 72.3]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 11.07,
+        "std": 3.56,
+        "sem": 1.59,
+        "ci_margin": 4.42,
+        "ci_low": 6.66,
+        "ci_high": 15.49,
+        "formatted_sd": "11.1 \u00b1 3.6",
+        "formatted_ci": "[6.7, 15.5]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 14.06,
+        "std": 0.79,
+        "sem": 0.36,
+        "ci_margin": 0.99,
+        "ci_low": 13.07,
+        "ci_high": 15.05,
+        "formatted_sd": "14.1 \u00b1 0.8",
+        "formatted_ci": "[13.1, 15.0]"
+      },
+      "t_stat": -27.91,
+      "p_value": 9.805170438801725e-06,
+      "significance": "***",
+      "cohen_d": 12.48,
+      "raw_qaoa_reds": [
+        14.775417952213537,
+        13.94930784256368,
+        14.166981488477514,
+        14.632702630988106,
+        12.77241594022417
+      ],
+      "raw_pso_reds": [
+        10.071033938437246,
+        5.865645022788843,
+        14.166981488477514,
+        14.632702630988106,
+        10.61643835616439
+      ]
+    },
+    {
+      "scenario_name": "11. Inclement Weather Network Slowdown",
+      "init_stats": {
+        "n": 5,
+        "mean": 83.52,
+        "std": 1.58,
+        "sem": 0.71,
+        "ci_margin": 1.96,
+        "ci_low": 81.56,
+        "ci_high": 85.49,
+        "formatted_sd": "83.5 \u00b1 1.6",
+        "formatted_ci": "[81.6, 85.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 92.04,
+        "std": 5.52,
+        "sem": 2.47,
+        "ci_margin": 6.86,
+        "ci_low": 85.18,
+        "ci_high": 98.9,
+        "formatted_sd": "92.0 \u00b1 5.5",
+        "formatted_ci": "[85.2, 98.9]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 91.68,
+        "std": 5.37,
+        "sem": 2.4,
+        "ci_margin": 6.66,
+        "ci_low": 85.02,
+        "ci_high": 98.34,
+        "formatted_sd": "91.7 \u00b1 5.4",
+        "formatted_ci": "[85.0, 98.3]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": -10.23,
+        "std": 7.03,
+        "sem": 3.15,
+        "ci_margin": 8.73,
+        "ci_low": -18.97,
+        "ci_high": -1.5,
+        "formatted_sd": "-10.2 \u00b1 7.0",
+        "formatted_ci": "[-19.0, -1.5]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": -9.8,
+        "std": 6.72,
+        "sem": 3.0,
+        "ci_margin": 8.34,
+        "ci_low": -18.14,
+        "ci_high": -1.46,
+        "formatted_sd": "-9.8 \u00b1 6.7",
+        "formatted_ci": "[-18.1, -1.5]"
+      },
+      "t_stat": 3.26,
+      "p_value": 0.031059054598573686,
+      "significance": "*",
+      "cohen_d": -1.46,
+      "raw_qaoa_reds": [
+        -8.036431824270018,
+        -13.683582736933408,
+        -13.086428318147474,
+        -15.361769675866658,
+        1.1806570690291638
+      ],
+      "raw_pso_reds": [
+        -8.036431824270018,
+        -13.923227065712423,
+        -15.022532441285943,
+        -15.361769675866658,
+        1.1806570690291638
+      ]
+    },
+    {
+      "scenario_name": "12. Cross-Town Transit Corridor Surge",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.94,
+        "std": 4.46,
+        "sem": 1.99,
+        "ci_margin": 5.54,
+        "ci_low": 77.4,
+        "ci_high": 88.48,
+        "formatted_sd": "82.9 \u00b1 4.5",
+        "formatted_ci": "[77.4, 88.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 82.55,
+        "std": 5.75,
+        "sem": 2.57,
+        "ci_margin": 7.13,
+        "ci_low": 75.41,
+        "ci_high": 89.68,
+        "formatted_sd": "82.5 \u00b1 5.7",
+        "formatted_ci": "[75.4, 89.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 82.41,
+        "std": 5.66,
+        "sem": 2.53,
+        "ci_margin": 7.03,
+        "ci_low": 75.38,
+        "ci_high": 89.44,
+        "formatted_sd": "82.4 \u00b1 5.7",
+        "formatted_ci": "[75.4, 89.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 0.49,
+        "std": 3.99,
+        "sem": 1.79,
+        "ci_margin": 4.96,
+        "ci_low": -4.47,
+        "ci_high": 5.45,
+        "formatted_sd": "0.5 \u00b1 4.0",
+        "formatted_ci": "[-4.5, 5.4]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 0.65,
+        "std": 3.88,
+        "sem": 1.73,
+        "ci_margin": 4.81,
+        "ci_low": -4.16,
+        "ci_high": 5.47,
+        "formatted_sd": "0.7 \u00b1 3.9",
+        "formatted_ci": "[-4.2, 5.5]"
+      },
+      "t_stat": -0.37,
+      "p_value": 0.7330733405893348,
+      "significance": "n.s.",
+      "cohen_d": 0.16,
+      "raw_qaoa_reds": [
+        7.351190476190473,
+        0.17846582749006695,
+        -1.268127314960124,
+        -2.511113781088548,
+        -0.4872546390894669
+      ],
+      "raw_pso_reds": [
+        7.351190476190473,
+        0.17846582749006695,
+        -2.0951304748153423,
+        -2.511113781088548,
+        -0.4872546390894669
+      ]
+    },
+    {
+      "scenario_name": "13. Late Night Heavy Freight Arterial",
+      "init_stats": {
+        "n": 5,
+        "mean": 78.08,
+        "std": 3.75,
+        "sem": 1.68,
+        "ci_margin": 4.66,
+        "ci_low": 73.42,
+        "ci_high": 82.73,
+        "formatted_sd": "78.1 \u00b1 3.8",
+        "formatted_ci": "[73.4, 82.7]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 61.32,
+        "std": 3.29,
+        "sem": 1.47,
+        "ci_margin": 4.08,
+        "ci_low": 57.24,
+        "ci_high": 65.4,
+        "formatted_sd": "61.3 \u00b1 3.3",
+        "formatted_ci": "[57.2, 65.4]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 61.32,
+        "std": 3.29,
+        "sem": 1.47,
+        "ci_margin": 4.08,
+        "ci_low": 57.24,
+        "ci_high": 65.4,
+        "formatted_sd": "61.3 \u00b1 3.3",
+        "formatted_ci": "[57.2, 65.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 21.36,
+        "std": 4.81,
+        "sem": 2.15,
+        "ci_margin": 5.97,
+        "ci_low": 15.4,
+        "ci_high": 27.33,
+        "formatted_sd": "21.4 \u00b1 4.8",
+        "formatted_ci": "[15.4, 27.3]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 21.36,
+        "std": 4.81,
+        "sem": 2.15,
+        "ci_margin": 5.97,
+        "ci_low": 15.4,
+        "ci_high": 27.33,
+        "formatted_sd": "21.4 \u00b1 4.8",
+        "formatted_ci": "[15.4, 27.3]"
+      },
+      "t_stat": -9.15,
+      "p_value": 0.0007925526943323937,
+      "significance": "***",
+      "cohen_d": 4.09,
+      "raw_qaoa_reds": [
+        25.986048942023785,
+        20.006818769643157,
+        25.94821650975872,
+        14.48961937716263,
+        20.393073409115054
+      ],
+      "raw_pso_reds": [
+        25.986048942023785,
+        20.006818769643157,
+        25.94821650975872,
+        14.48961937716263,
+        20.393073409115054
+      ]
+    },
+    {
+      "scenario_name": "14. Distributed Triple Bottleneck Peak",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.44,
+        "std": 2.74,
+        "sem": 1.23,
+        "ci_margin": 3.4,
+        "ci_low": 79.04,
+        "ci_high": 85.84,
+        "formatted_sd": "82.4 \u00b1 2.7",
+        "formatted_ci": "[79.0, 85.8]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 83.46,
+        "std": 4.19,
+        "sem": 1.87,
+        "ci_margin": 5.2,
+        "ci_low": 78.26,
+        "ci_high": 88.66,
+        "formatted_sd": "83.5 \u00b1 4.2",
+        "formatted_ci": "[78.3, 88.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 81.81,
+        "std": 2.45,
+        "sem": 1.09,
+        "ci_margin": 3.04,
+        "ci_low": 78.77,
+        "ci_high": 84.85,
+        "formatted_sd": "81.8 \u00b1 2.4",
+        "formatted_ci": "[78.8, 84.9]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": -1.21,
+        "std": 2.7,
+        "sem": 1.21,
+        "ci_margin": 3.36,
+        "ci_low": -4.57,
+        "ci_high": 2.15,
+        "formatted_sd": "-1.2 \u00b1 2.7",
+        "formatted_ci": "[-4.6, 2.1]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 0.75,
+        "std": 1.45,
+        "sem": 0.65,
+        "ci_margin": 1.8,
+        "ci_low": -1.05,
+        "ci_high": 2.54,
+        "formatted_sd": "0.7 \u00b1 1.4",
+        "formatted_ci": "[-1.1, 2.5]"
+      },
+      "t_stat": -1.15,
+      "p_value": 0.3134002825441702,
+      "significance": "n.s.",
+      "cohen_d": 0.52,
+      "raw_qaoa_reds": [
+        3.313779331003498,
+        0.0,
+        0.0,
+        0.0,
+        0.41308589695685627
+      ],
+      "raw_pso_reds": [
+        -6.047179231153263,
+        0.0,
+        0.0,
+        0.0,
+        -1.6814437637865118e-14
+      ]
+    },
+    {
+      "scenario_name": "15. Off-Peak Nighttime Low Baseline",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.17,
+        "std": 4.07,
+        "sem": 1.82,
+        "ci_margin": 5.05,
+        "ci_low": 75.12,
+        "ci_high": 85.22,
+        "formatted_sd": "80.2 \u00b1 4.1",
+        "formatted_ci": "[75.1, 85.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 55.17,
+        "std": 4.43,
+        "sem": 1.98,
+        "ci_margin": 5.51,
+        "ci_low": 49.66,
+        "ci_high": 60.67,
+        "formatted_sd": "55.2 \u00b1 4.4",
+        "formatted_ci": "[49.7, 60.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 55.17,
+        "std": 4.43,
+        "sem": 1.98,
+        "ci_margin": 5.51,
+        "ci_low": 49.66,
+        "ci_high": 60.67,
+        "formatted_sd": "55.2 \u00b1 4.4",
+        "formatted_ci": "[49.7, 60.7]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 31.25,
+        "std": 2.76,
+        "sem": 1.24,
+        "ci_margin": 3.43,
+        "ci_low": 27.81,
+        "ci_high": 34.68,
+        "formatted_sd": "31.2 \u00b1 2.8",
+        "formatted_ci": "[27.8, 34.7]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 31.25,
+        "std": 2.76,
+        "sem": 1.24,
+        "ci_margin": 3.43,
+        "ci_low": 27.81,
+        "ci_high": 34.68,
+        "formatted_sd": "31.2 \u00b1 2.8",
+        "formatted_ci": "[27.8, 34.7]"
+      },
+      "t_stat": -29.58,
+      "p_value": 7.778696128119503e-06,
+      "significance": "***",
+      "cohen_d": 13.23,
+      "raw_qaoa_reds": [
+        27.59987431716745,
+        28.984841525034465,
+        33.79733879222108,
+        32.98554383880389,
+        32.86388282515316
+      ],
+      "raw_pso_reds": [
+        27.59987431716745,
+        28.984841525034465,
+        33.79733879222108,
+        32.98554383880389,
+        32.86388282515316
+      ]
+    }
+  ],
+  "5-Node Mesh": [
+    {
+      "scenario_name": "1. Single Major Expressway Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.22,
+        "std": 3.08,
+        "sem": 1.38,
+        "ci_margin": 3.83,
+        "ci_low": 75.39,
+        "ci_high": 83.04,
+        "formatted_sd": "79.2 \u00b1 3.1",
+        "formatted_ci": "[75.4, 83.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 61.44,
+        "std": 9.15,
+        "sem": 4.09,
+        "ci_margin": 11.36,
+        "ci_low": 50.08,
+        "ci_high": 72.8,
+        "formatted_sd": "61.4 \u00b1 9.1",
+        "formatted_ci": "[50.1, 72.8]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 60.11,
+        "std": 6.64,
+        "sem": 2.97,
+        "ci_margin": 8.24,
+        "ci_low": 51.87,
+        "ci_high": 68.35,
+        "formatted_sd": "60.1 \u00b1 6.6",
+        "formatted_ci": "[51.9, 68.3]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 22.62,
+        "std": 9.23,
+        "sem": 4.13,
+        "ci_margin": 11.47,
+        "ci_low": 11.16,
+        "ci_high": 34.09,
+        "formatted_sd": "22.6 \u00b1 9.2",
+        "formatted_ci": "[11.2, 34.1]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 24.23,
+        "std": 6.44,
+        "sem": 2.88,
+        "ci_margin": 8.0,
+        "ci_low": 16.22,
+        "ci_high": 32.23,
+        "formatted_sd": "24.2 \u00b1 6.4",
+        "formatted_ci": "[16.2, 32.2]"
+      },
+      "t_stat": -8.99,
+      "p_value": 0.0008474506168917341,
+      "significance": "***",
+      "cohen_d": 4.02,
+      "raw_qaoa_reds": [
+        16.516381833632312,
+        27.73440957286743,
+        19.56839484827381,
+        32.74401758786888,
+        24.56977288691173
+      ],
+      "raw_pso_reds": [
+        8.500535045478873,
+        27.73440957286743,
+        19.56839484827381,
+        32.74401758786888,
+        24.56977288691173
+      ]
+    },
+    {
+      "scenario_name": "2. Adjacent Dual Arterial Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 78.54,
+        "std": 4.02,
+        "sem": 1.8,
+        "ci_margin": 4.99,
+        "ci_low": 73.56,
+        "ci_high": 83.53,
+        "formatted_sd": "78.5 \u00b1 4.0",
+        "formatted_ci": "[73.6, 83.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 68.38,
+        "std": 7.01,
+        "sem": 3.14,
+        "ci_margin": 8.71,
+        "ci_low": 59.67,
+        "ci_high": 77.09,
+        "formatted_sd": "68.4 \u00b1 7.0",
+        "formatted_ci": "[59.7, 77.1]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 67.92,
+        "std": 6.62,
+        "sem": 2.96,
+        "ci_margin": 8.22,
+        "ci_low": 59.7,
+        "ci_high": 76.14,
+        "formatted_sd": "67.9 \u00b1 6.6",
+        "formatted_ci": "[59.7, 76.1]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 12.79,
+        "std": 9.79,
+        "sem": 4.38,
+        "ci_margin": 12.16,
+        "ci_low": 0.63,
+        "ci_high": 24.94,
+        "formatted_sd": "12.8 \u00b1 9.8",
+        "formatted_ci": "[0.6, 24.9]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 13.41,
+        "std": 8.76,
+        "sem": 3.92,
+        "ci_margin": 10.88,
+        "ci_low": 2.53,
+        "ci_high": 24.29,
+        "formatted_sd": "13.4 \u00b1 8.8",
+        "formatted_ci": "[2.5, 24.3]"
+      },
+      "t_stat": -3.42,
+      "p_value": 0.026747654099842283,
+      "significance": "*",
+      "cohen_d": 1.53,
+      "raw_qaoa_reds": [
+        13.921448765950933,
+        2.354085603112839,
+        14.86620650529501,
+        26.3552882052844,
+        9.54576824142041
+      ],
+      "raw_pso_reds": [
+        13.921448765950933,
+        -0.749837872892332,
+        14.86620650529501,
+        26.3552882052844,
+        9.54576824142041
+      ]
+    },
+    {
+      "scenario_name": "3. Non-Adjacent Dual Arterial Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.37,
+        "std": 2.94,
+        "sem": 1.31,
+        "ci_margin": 3.65,
+        "ci_low": 76.72,
+        "ci_high": 84.02,
+        "formatted_sd": "80.4 \u00b1 2.9",
+        "formatted_ci": "[76.7, 84.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 63.32,
+        "std": 5.3,
+        "sem": 2.37,
+        "ci_margin": 6.58,
+        "ci_low": 56.74,
+        "ci_high": 69.89,
+        "formatted_sd": "63.3 \u00b1 5.3",
+        "formatted_ci": "[56.7, 69.9]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 61.07,
+        "std": 4.88,
+        "sem": 2.18,
+        "ci_margin": 6.06,
+        "ci_low": 55.01,
+        "ci_high": 67.13,
+        "formatted_sd": "61.1 \u00b1 4.9",
+        "formatted_ci": "[55.0, 67.1]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 21.3,
+        "std": 4.44,
+        "sem": 1.99,
+        "ci_margin": 5.51,
+        "ci_low": 15.79,
+        "ci_high": 26.81,
+        "formatted_sd": "21.3 \u00b1 4.4",
+        "formatted_ci": "[15.8, 26.8]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 24.06,
+        "std": 4.55,
+        "sem": 2.04,
+        "ci_margin": 5.65,
+        "ci_low": 18.4,
+        "ci_high": 29.71,
+        "formatted_sd": "24.1 \u00b1 4.6",
+        "formatted_ci": "[18.4, 29.7]"
+      },
+      "t_stat": -12.18,
+      "p_value": 0.00026088681159054645,
+      "significance": "***",
+      "cohen_d": 5.45,
+      "raw_qaoa_reds": [
+        16.05311406189232,
+        25.423522915516294,
+        27.241017928143435,
+        25.12650907250778,
+        26.433993270208944
+      ],
+      "raw_pso_reds": [
+        16.05311406189232,
+        20.760432278930338,
+        18.139789562760953,
+        25.12650907250778,
+        26.433993270208944
+      ]
+    },
+    {
+      "scenario_name": "4. Radial Inbound Morning Commute Peak",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.57,
+        "std": 2.77,
+        "sem": 1.24,
+        "ci_margin": 3.44,
+        "ci_low": 76.13,
+        "ci_high": 83.01,
+        "formatted_sd": "79.6 \u00b1 2.8",
+        "formatted_ci": "[76.1, 83.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 64.93,
+        "std": 7.07,
+        "sem": 3.16,
+        "ci_margin": 8.78,
+        "ci_low": 56.14,
+        "ci_high": 73.71,
+        "formatted_sd": "64.9 \u00b1 7.1",
+        "formatted_ci": "[56.1, 73.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 63.71,
+        "std": 5.56,
+        "sem": 2.49,
+        "ci_margin": 6.91,
+        "ci_low": 56.81,
+        "ci_high": 70.62,
+        "formatted_sd": "63.7 \u00b1 5.6",
+        "formatted_ci": "[56.8, 70.6]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 18.43,
+        "std": 7.96,
+        "sem": 3.56,
+        "ci_margin": 9.89,
+        "ci_low": 8.54,
+        "ci_high": 28.32,
+        "formatted_sd": "18.4 \u00b1 8.0",
+        "formatted_ci": "[8.5, 28.3]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 19.92,
+        "std": 6.48,
+        "sem": 2.9,
+        "ci_margin": 8.05,
+        "ci_low": 11.87,
+        "ci_high": 27.97,
+        "formatted_sd": "19.9 \u00b1 6.5",
+        "formatted_ci": "[11.9, 28.0]"
+      },
+      "t_stat": -6.63,
+      "p_value": 0.002685551689895037,
+      "significance": "**",
+      "cohen_d": 2.96,
+      "raw_qaoa_reds": [
+        28.474806448647733,
+        20.06519674913457,
+        21.88774341351661,
+        18.702611625947778,
+        10.455910455910466
+      ],
+      "raw_pso_reds": [
+        28.474806448647733,
+        20.06519674913457,
+        18.718864407160336,
+        18.702611625947778,
+        6.183456183456197
+      ]
+    },
+    {
+      "scenario_name": "5. Radial Outbound Evening Egress Surge",
+      "init_stats": {
+        "n": 5,
+        "mean": 81.12,
+        "std": 2.75,
+        "sem": 1.23,
+        "ci_margin": 3.42,
+        "ci_low": 77.7,
+        "ci_high": 84.54,
+        "formatted_sd": "81.1 \u00b1 2.8",
+        "formatted_ci": "[77.7, 84.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 70.09,
+        "std": 3.27,
+        "sem": 1.46,
+        "ci_margin": 4.06,
+        "ci_low": 66.03,
+        "ci_high": 74.16,
+        "formatted_sd": "70.1 \u00b1 3.3",
+        "formatted_ci": "[66.0, 74.2]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 70.09,
+        "std": 3.27,
+        "sem": 1.46,
+        "ci_margin": 4.06,
+        "ci_low": 66.03,
+        "ci_high": 74.16,
+        "formatted_sd": "70.1 \u00b1 3.3",
+        "formatted_ci": "[66.0, 74.2]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 13.43,
+        "std": 6.57,
+        "sem": 2.94,
+        "ci_margin": 8.16,
+        "ci_low": 5.27,
+        "ci_high": 21.6,
+        "formatted_sd": "13.4 \u00b1 6.6",
+        "formatted_ci": "[5.3, 21.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 13.43,
+        "std": 6.57,
+        "sem": 2.94,
+        "ci_margin": 8.16,
+        "ci_low": 5.27,
+        "ci_high": 21.6,
+        "formatted_sd": "13.4 \u00b1 6.6",
+        "formatted_ci": "[5.3, 21.6]"
+      },
+      "t_stat": -4.42,
+      "p_value": 0.011528710421453495,
+      "significance": "*",
+      "cohen_d": 1.98,
+      "raw_qaoa_reds": [
+        3.496208399465898,
+        19.97458859038805,
+        10.407566687695947,
+        17.526860457451722,
+        15.76479065274849
+      ],
+      "raw_pso_reds": [
+        3.496208399465898,
+        19.97458859038805,
+        10.407566687695947,
+        17.526860457451722,
+        15.76479065274849
+      ]
+    },
+    {
+      "scenario_name": "6. Commercial District Central Rush",
+      "init_stats": {
+        "n": 5,
+        "mean": 83.08,
+        "std": 2.18,
+        "sem": 0.97,
+        "ci_margin": 2.7,
+        "ci_low": 80.38,
+        "ci_high": 85.78,
+        "formatted_sd": "83.1 \u00b1 2.2",
+        "formatted_ci": "[80.4, 85.8]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 82.35,
+        "std": 7.79,
+        "sem": 3.48,
+        "ci_margin": 9.67,
+        "ci_low": 72.69,
+        "ci_high": 92.02,
+        "formatted_sd": "82.4 \u00b1 7.8",
+        "formatted_ci": "[72.7, 92.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 79.95,
+        "std": 4.5,
+        "sem": 2.01,
+        "ci_margin": 5.58,
+        "ci_low": 74.36,
+        "ci_high": 85.53,
+        "formatted_sd": "79.9 \u00b1 4.5",
+        "formatted_ci": "[74.4, 85.5]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 0.9,
+        "std": 8.59,
+        "sem": 3.84,
+        "ci_margin": 10.66,
+        "ci_low": -9.76,
+        "ci_high": 11.56,
+        "formatted_sd": "0.9 \u00b1 8.6",
+        "formatted_ci": "[-9.8, 11.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 3.79,
+        "std": 4.35,
+        "sem": 1.95,
+        "ci_margin": 5.41,
+        "ci_low": -1.62,
+        "ci_high": 9.19,
+        "formatted_sd": "3.8 \u00b1 4.4",
+        "formatted_ci": "[-1.6, 9.2]"
+      },
+      "t_stat": -1.94,
+      "p_value": 0.12493445742825703,
+      "significance": "n.s.",
+      "cohen_d": 0.87,
+      "raw_qaoa_reds": [
+        4.789153230352909,
+        6.727798913927094,
+        7.245154316930318,
+        3.754896835229988,
+        -3.5767574711173573
+      ],
+      "raw_pso_reds": [
+        4.1738242258229326,
+        6.148993594120902,
+        7.245154316930318,
+        0.7468460237544453,
+        -13.808244873598492
+      ]
+    },
+    {
+      "scenario_name": "7. Construction Capacity Reduction Incident",
+      "init_stats": {
+        "n": 5,
+        "mean": 76.7,
+        "std": 4.13,
+        "sem": 1.85,
+        "ci_margin": 5.12,
+        "ci_low": 71.58,
+        "ci_high": 81.82,
+        "formatted_sd": "76.7 \u00b1 4.1",
+        "formatted_ci": "[71.6, 81.8]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 51.66,
+        "std": 4.98,
+        "sem": 2.23,
+        "ci_margin": 6.19,
+        "ci_low": 45.48,
+        "ci_high": 57.85,
+        "formatted_sd": "51.7 \u00b1 5.0",
+        "formatted_ci": "[45.5, 57.8]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 51.32,
+        "std": 4.38,
+        "sem": 1.96,
+        "ci_margin": 5.44,
+        "ci_low": 45.89,
+        "ci_high": 56.76,
+        "formatted_sd": "51.3 \u00b1 4.4",
+        "formatted_ci": "[45.9, 56.8]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 32.65,
+        "std": 5.14,
+        "sem": 2.3,
+        "ci_margin": 6.38,
+        "ci_low": 26.27,
+        "ci_high": 39.04,
+        "formatted_sd": "32.7 \u00b1 5.1",
+        "formatted_ci": "[26.3, 39.0]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 33.07,
+        "std": 4.75,
+        "sem": 2.12,
+        "ci_margin": 5.9,
+        "ci_low": 27.17,
+        "ci_high": 38.96,
+        "formatted_sd": "33.1 \u00b1 4.7",
+        "formatted_ci": "[27.2, 39.0]"
+      },
+      "t_stat": -14.61,
+      "p_value": 0.00012782844059350932,
+      "significance": "***",
+      "cohen_d": 6.53,
+      "raw_qaoa_reds": [
+        33.83713061132417,
+        39.06677035884901,
+        35.48521449396085,
+        30.148776277038703,
+        26.805003775815095
+      ],
+      "raw_pso_reds": [
+        33.83713061132417,
+        39.06677035884901,
+        35.48521449396085,
+        28.08068714489586,
+        26.805003775815095
+      ]
+    },
+    {
+      "scenario_name": "8. Stadium Special Event Outflow Spike",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.12,
+        "std": 1.79,
+        "sem": 0.8,
+        "ci_margin": 2.23,
+        "ci_low": 77.89,
+        "ci_high": 82.34,
+        "formatted_sd": "80.1 \u00b1 1.8",
+        "formatted_ci": "[77.9, 82.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 67.69,
+        "std": 1.4,
+        "sem": 0.63,
+        "ci_margin": 1.74,
+        "ci_low": 65.95,
+        "ci_high": 69.43,
+        "formatted_sd": "67.7 \u00b1 1.4",
+        "formatted_ci": "[66.0, 69.4]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 67.69,
+        "std": 1.4,
+        "sem": 0.63,
+        "ci_margin": 1.74,
+        "ci_low": 65.95,
+        "ci_high": 69.43,
+        "formatted_sd": "67.7 \u00b1 1.4",
+        "formatted_ci": "[66.0, 69.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 15.5,
+        "std": 1.49,
+        "sem": 0.67,
+        "ci_margin": 1.85,
+        "ci_low": 13.65,
+        "ci_high": 17.34,
+        "formatted_sd": "15.5 \u00b1 1.5",
+        "formatted_ci": "[13.6, 17.3]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 15.5,
+        "std": 1.49,
+        "sem": 0.67,
+        "ci_margin": 1.85,
+        "ci_low": 13.65,
+        "ci_high": 17.34,
+        "formatted_sd": "15.5 \u00b1 1.5",
+        "formatted_ci": "[13.6, 17.3]"
+      },
+      "t_stat": -20.74,
+      "p_value": 3.190530917081635e-05,
+      "significance": "***",
+      "cohen_d": 9.28,
+      "raw_qaoa_reds": [
+        17.472530173791206,
+        13.812678285427271,
+        14.912543388007899,
+        16.575258988421687,
+        14.704192476883032
+      ],
+      "raw_pso_reds": [
+        17.472530173791206,
+        13.812678285427271,
+        14.912543388007899,
+        16.575258988421687,
+        14.704192476883032
+      ]
+    },
+    {
+      "scenario_name": "9. School Zone Perimeter Dropoff",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.41,
+        "std": 2.9,
+        "sem": 1.3,
+        "ci_margin": 3.6,
+        "ci_low": 78.81,
+        "ci_high": 86.0,
+        "formatted_sd": "82.4 \u00b1 2.9",
+        "formatted_ci": "[78.8, 86.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 74.96,
+        "std": 5.7,
+        "sem": 2.55,
+        "ci_margin": 7.08,
+        "ci_low": 67.88,
+        "ci_high": 82.04,
+        "formatted_sd": "75.0 \u00b1 5.7",
+        "formatted_ci": "[67.9, 82.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 74.88,
+        "std": 5.68,
+        "sem": 2.54,
+        "ci_margin": 7.05,
+        "ci_low": 67.83,
+        "ci_high": 81.94,
+        "formatted_sd": "74.9 \u00b1 5.7",
+        "formatted_ci": "[67.8, 81.9]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 9.12,
+        "std": 4.34,
+        "sem": 1.94,
+        "ci_margin": 5.39,
+        "ci_low": 3.74,
+        "ci_high": 14.51,
+        "formatted_sd": "9.1 \u00b1 4.3",
+        "formatted_ci": "[3.7, 14.5]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 9.21,
+        "std": 4.34,
+        "sem": 1.94,
+        "ci_margin": 5.39,
+        "ci_low": 3.82,
+        "ci_high": 14.6,
+        "formatted_sd": "9.2 \u00b1 4.3",
+        "formatted_ci": "[3.8, 14.6]"
+      },
+      "t_stat": -4.93,
+      "p_value": 0.007860660062124112,
+      "significance": "**",
+      "cohen_d": 2.21,
+      "raw_qaoa_reds": [
+        3.4190142582268686,
+        15.026624618725101,
+        9.6252648137107,
+        10.97073404765713,
+        7.01500564728659
+      ],
+      "raw_pso_reds": [
+        3.4190142582268686,
+        15.026624618725101,
+        9.179942053989187,
+        10.97073404765713,
+        7.01500564728659
+      ]
+    },
+    {
+      "scenario_name": "10. Asymmetric Directional Flow Pattern",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.02,
+        "std": 3.43,
+        "sem": 1.53,
+        "ci_margin": 4.26,
+        "ci_low": 77.76,
+        "ci_high": 86.28,
+        "formatted_sd": "82.0 \u00b1 3.4",
+        "formatted_ci": "[77.8, 86.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 67.22,
+        "std": 8.59,
+        "sem": 3.84,
+        "ci_margin": 10.67,
+        "ci_low": 56.55,
+        "ci_high": 77.89,
+        "formatted_sd": "67.2 \u00b1 8.6",
+        "formatted_ci": "[56.5, 77.9]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 67.17,
+        "std": 8.6,
+        "sem": 3.85,
+        "ci_margin": 10.68,
+        "ci_low": 56.49,
+        "ci_high": 77.85,
+        "formatted_sd": "67.2 \u00b1 8.6",
+        "formatted_ci": "[56.5, 77.8]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 17.84,
+        "std": 12.01,
+        "sem": 5.37,
+        "ci_margin": 14.92,
+        "ci_low": 2.93,
+        "ci_high": 32.76,
+        "formatted_sd": "17.8 \u00b1 12.0",
+        "formatted_ci": "[2.9, 32.8]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 17.9,
+        "std": 12.04,
+        "sem": 5.39,
+        "ci_margin": 14.95,
+        "ci_low": 2.95,
+        "ci_high": 32.85,
+        "formatted_sd": "17.9 \u00b1 12.0",
+        "formatted_ci": "[2.9, 32.9]"
+      },
+      "t_stat": -3.3,
+      "p_value": 0.030018576714906958,
+      "significance": "*",
+      "cohen_d": 1.47,
+      "raw_qaoa_reds": [
+        18.86341323041506,
+        -3.0850619518306948,
+        24.368151330861465,
+        26.276250880902037,
+        23.07850207664781
+      ],
+      "raw_pso_reds": [
+        18.86341323041506,
+        -3.0850619518306948,
+        24.368151330861465,
+        26.276250880902037,
+        22.7903421459313
+      ]
+    },
+    {
+      "scenario_name": "11. Inclement Weather Network Slowdown",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.76,
+        "std": 1.08,
+        "sem": 0.48,
+        "ci_margin": 1.34,
+        "ci_low": 81.41,
+        "ci_high": 84.1,
+        "formatted_sd": "82.8 \u00b1 1.1",
+        "formatted_ci": "[81.4, 84.1]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 80.18,
+        "std": 8.47,
+        "sem": 3.79,
+        "ci_margin": 10.52,
+        "ci_low": 69.66,
+        "ci_high": 90.7,
+        "formatted_sd": "80.2 \u00b1 8.5",
+        "formatted_ci": "[69.7, 90.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 78.34,
+        "std": 6.56,
+        "sem": 2.93,
+        "ci_margin": 8.15,
+        "ci_low": 70.19,
+        "ci_high": 86.49,
+        "formatted_sd": "78.3 \u00b1 6.6",
+        "formatted_ci": "[70.2, 86.5]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 3.14,
+        "std": 9.76,
+        "sem": 4.37,
+        "ci_margin": 12.12,
+        "ci_low": -8.98,
+        "ci_high": 15.26,
+        "formatted_sd": "3.1 \u00b1 9.8",
+        "formatted_ci": "[-9.0, 15.3]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 5.37,
+        "std": 7.38,
+        "sem": 3.3,
+        "ci_margin": 9.16,
+        "ci_low": -3.8,
+        "ci_high": 14.53,
+        "formatted_sd": "5.4 \u00b1 7.4",
+        "formatted_ci": "[-3.8, 14.5]"
+      },
+      "t_stat": -1.62,
+      "p_value": 0.18025995113871962,
+      "significance": "n.s.",
+      "cohen_d": 0.73,
+      "raw_qaoa_reds": [
+        16.056749852623312,
+        8.55548427717783,
+        4.210806936577851,
+        1.3738601823708152,
+        -3.362288452898015
+      ],
+      "raw_pso_reds": [
+        16.056749852623312,
+        7.342406651530505,
+        4.210806936577851,
+        -2.061803444782159,
+        -9.83844606077972
+      ]
+    },
+    {
+      "scenario_name": "12. Cross-Town Transit Corridor Surge",
+      "init_stats": {
+        "n": 5,
+        "mean": 83.23,
+        "std": 2.19,
+        "sem": 0.98,
+        "ci_margin": 2.72,
+        "ci_low": 80.51,
+        "ci_high": 85.95,
+        "formatted_sd": "83.2 \u00b1 2.2",
+        "formatted_ci": "[80.5, 85.9]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 69.53,
+        "std": 4.35,
+        "sem": 1.94,
+        "ci_margin": 5.4,
+        "ci_low": 64.13,
+        "ci_high": 74.93,
+        "formatted_sd": "69.5 \u00b1 4.3",
+        "formatted_ci": "[64.1, 74.9]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 67.72,
+        "std": 5.04,
+        "sem": 2.25,
+        "ci_margin": 6.25,
+        "ci_low": 61.47,
+        "ci_high": 73.98,
+        "formatted_sd": "67.7 \u00b1 5.0",
+        "formatted_ci": "[61.5, 74.0]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 16.5,
+        "std": 3.96,
+        "sem": 1.77,
+        "ci_margin": 4.91,
+        "ci_low": 11.58,
+        "ci_high": 21.41,
+        "formatted_sd": "16.5 \u00b1 4.0",
+        "formatted_ci": "[11.6, 21.4]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 18.67,
+        "std": 4.88,
+        "sem": 2.18,
+        "ci_margin": 6.06,
+        "ci_low": 12.61,
+        "ci_high": 24.74,
+        "formatted_sd": "18.7 \u00b1 4.9",
+        "formatted_ci": "[12.6, 24.7]"
+      },
+      "t_stat": -8.76,
+      "p_value": 0.0009345785194240097,
+      "significance": "***",
+      "cohen_d": 3.92,
+      "raw_qaoa_reds": [
+        21.55714912922581,
+        18.560707701096707,
+        20.716191787897046,
+        10.296247531270566,
+        22.238117809281682
+      ],
+      "raw_pso_reds": [
+        15.428905939662569,
+        18.560707701096707,
+        20.716191787897046,
+        10.296247531270566,
+        17.475671338902266
+      ]
+    },
+    {
+      "scenario_name": "13. Late Night Heavy Freight Arterial",
+      "init_stats": {
+        "n": 5,
+        "mean": 76.67,
+        "std": 4.5,
+        "sem": 2.01,
+        "ci_margin": 5.59,
+        "ci_low": 71.08,
+        "ci_high": 82.26,
+        "formatted_sd": "76.7 \u00b1 4.5",
+        "formatted_ci": "[71.1, 82.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 53.98,
+        "std": 3.59,
+        "sem": 1.6,
+        "ci_margin": 4.45,
+        "ci_low": 49.52,
+        "ci_high": 58.43,
+        "formatted_sd": "54.0 \u00b1 3.6",
+        "formatted_ci": "[49.5, 58.4]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 53.81,
+        "std": 3.44,
+        "sem": 1.54,
+        "ci_margin": 4.27,
+        "ci_low": 49.54,
+        "ci_high": 58.08,
+        "formatted_sd": "53.8 \u00b1 3.4",
+        "formatted_ci": "[49.5, 58.1]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 29.53,
+        "std": 4.43,
+        "sem": 1.98,
+        "ci_margin": 5.5,
+        "ci_low": 24.02,
+        "ci_high": 35.03,
+        "formatted_sd": "29.5 \u00b1 4.4",
+        "formatted_ci": "[24.0, 35.0]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 29.72,
+        "std": 4.49,
+        "sem": 2.01,
+        "ci_margin": 5.57,
+        "ci_low": 24.16,
+        "ci_high": 35.29,
+        "formatted_sd": "29.7 \u00b1 4.5",
+        "formatted_ci": "[24.2, 35.3]"
+      },
+      "t_stat": -12.55,
+      "p_value": 0.00023231921880052805,
+      "significance": "***",
+      "cohen_d": 5.61,
+      "raw_qaoa_reds": [
+        29.10175242226031,
+        31.474953840251302,
+        34.48474049004776,
+        22.478558896287193,
+        31.084403168533193
+      ],
+      "raw_pso_reds": [
+        29.10175242226031,
+        31.474953840251302,
+        34.48474049004776,
+        22.478558896287193,
+        30.092870800327777
+      ]
+    },
+    {
+      "scenario_name": "14. Distributed Triple Bottleneck Peak",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.1,
+        "std": 2.43,
+        "sem": 1.09,
+        "ci_margin": 3.02,
+        "ci_low": 79.08,
+        "ci_high": 85.12,
+        "formatted_sd": "82.1 \u00b1 2.4",
+        "formatted_ci": "[79.1, 85.1]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 75.16,
+        "std": 4.27,
+        "sem": 1.91,
+        "ci_margin": 5.31,
+        "ci_low": 69.86,
+        "ci_high": 80.47,
+        "formatted_sd": "75.2 \u00b1 4.3",
+        "formatted_ci": "[69.9, 80.5]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 73.78,
+        "std": 5.17,
+        "sem": 2.31,
+        "ci_margin": 6.42,
+        "ci_low": 67.36,
+        "ci_high": 80.21,
+        "formatted_sd": "73.8 \u00b1 5.2",
+        "formatted_ci": "[67.4, 80.2]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 8.5,
+        "std": 2.86,
+        "sem": 1.28,
+        "ci_margin": 3.55,
+        "ci_low": 4.95,
+        "ci_high": 12.05,
+        "formatted_sd": "8.5 \u00b1 2.9",
+        "formatted_ci": "[4.9, 12.0]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 10.21,
+        "std": 3.72,
+        "sem": 1.66,
+        "ci_margin": 4.62,
+        "ci_low": 5.59,
+        "ci_high": 14.83,
+        "formatted_sd": "10.2 \u00b1 3.7",
+        "formatted_ci": "[5.6, 14.8]"
+      },
+      "t_stat": -6.39,
+      "p_value": 0.003081373819213121,
+      "significance": "**",
+      "cohen_d": 2.86,
+      "raw_qaoa_reds": [
+        9.484415322949658,
+        12.540070862156247,
+        13.12460173696382,
+        11.865107616191683,
+        4.035966778776865
+      ],
+      "raw_pso_reds": [
+        9.484415322949658,
+        9.039142905348402,
+        8.067729880688512,
+        11.865107616191683,
+        4.035966778776865
+      ]
+    },
+    {
+      "scenario_name": "15. Off-Peak Nighttime Low Baseline",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.85,
+        "std": 4.45,
+        "sem": 1.99,
+        "ci_margin": 5.52,
+        "ci_low": 74.33,
+        "ci_high": 85.37,
+        "formatted_sd": "79.9 \u00b1 4.4",
+        "formatted_ci": "[74.3, 85.4]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 60.51,
+        "std": 4.92,
+        "sem": 2.2,
+        "ci_margin": 6.11,
+        "ci_low": 54.4,
+        "ci_high": 66.63,
+        "formatted_sd": "60.5 \u00b1 4.9",
+        "formatted_ci": "[54.4, 66.6]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 60.41,
+        "std": 4.87,
+        "sem": 2.18,
+        "ci_margin": 6.05,
+        "ci_low": 54.37,
+        "ci_high": 66.46,
+        "formatted_sd": "60.4 \u00b1 4.9",
+        "formatted_ci": "[54.4, 66.5]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 24.29,
+        "std": 2.54,
+        "sem": 1.14,
+        "ci_margin": 3.15,
+        "ci_low": 21.14,
+        "ci_high": 27.45,
+        "formatted_sd": "24.3 \u00b1 2.5",
+        "formatted_ci": "[21.1, 27.4]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 24.42,
+        "std": 2.55,
+        "sem": 1.14,
+        "ci_margin": 3.17,
+        "ci_low": 21.25,
+        "ci_high": 27.59,
+        "formatted_sd": "24.4 \u00b1 2.6",
+        "formatted_ci": "[21.2, 27.6]"
+      },
+      "t_stat": -28.23,
+      "p_value": 9.364444806425107e-06,
+      "significance": "***",
+      "cohen_d": 12.63,
+      "raw_qaoa_reds": [
+        28.085270844775312,
+        24.875877770463017,
+        23.017016055902275,
+        21.22128405115247,
+        24.88539620170269
+      ],
+      "raw_pso_reds": [
+        28.085270844775312,
+        24.264867237217466,
+        23.017016055902275,
+        21.22128405115247,
+        24.88539620170269
+      ]
+    }
+  ],
+  "6-Node Mesh": [
+    {
+      "scenario_name": "1. Single Major Expressway Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.98,
+        "std": 1.67,
+        "sem": 0.75,
+        "ci_margin": 2.08,
+        "ci_low": 77.91,
+        "ci_high": 82.06,
+        "formatted_sd": "80.0 \u00b1 1.7",
+        "formatted_ci": "[77.9, 82.1]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 58.56,
+        "std": 2.56,
+        "sem": 1.15,
+        "ci_margin": 3.18,
+        "ci_low": 55.37,
+        "ci_high": 61.74,
+        "formatted_sd": "58.6 \u00b1 2.6",
+        "formatted_ci": "[55.4, 61.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 58.33,
+        "std": 2.6,
+        "sem": 1.16,
+        "ci_margin": 3.23,
+        "ci_low": 55.1,
+        "ci_high": 61.56,
+        "formatted_sd": "58.3 \u00b1 2.6",
+        "formatted_ci": "[55.1, 61.6]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 26.72,
+        "std": 4.52,
+        "sem": 2.02,
+        "ci_margin": 5.61,
+        "ci_low": 21.11,
+        "ci_high": 32.33,
+        "formatted_sd": "26.7 \u00b1 4.5",
+        "formatted_ci": "[21.1, 32.3]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 27.01,
+        "std": 4.53,
+        "sem": 2.03,
+        "ci_margin": 5.63,
+        "ci_low": 21.38,
+        "ci_high": 32.63,
+        "formatted_sd": "27.0 \u00b1 4.5",
+        "formatted_ci": "[21.4, 32.6]"
+      },
+      "t_stat": -12.0,
+      "p_value": 0.0002761792062014244,
+      "significance": "***",
+      "cohen_d": 5.37,
+      "raw_qaoa_reds": [
+        27.93767959649815,
+        24.318487059421393,
+        21.480889038558686,
+        27.723802681670783,
+        33.56480195544691
+      ],
+      "raw_pso_reds": [
+        27.93767959649815,
+        24.318487059421393,
+        21.480889038558686,
+        26.310923410569583,
+        33.56480195544691
+      ]
+    },
+    {
+      "scenario_name": "2. Adjacent Dual Arterial Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 80.8,
+        "std": 3.68,
+        "sem": 1.65,
+        "ci_margin": 4.57,
+        "ci_low": 76.23,
+        "ci_high": 85.37,
+        "formatted_sd": "80.8 \u00b1 3.7",
+        "formatted_ci": "[76.2, 85.4]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 62.28,
+        "std": 6.09,
+        "sem": 2.72,
+        "ci_margin": 7.56,
+        "ci_low": 54.72,
+        "ci_high": 69.84,
+        "formatted_sd": "62.3 \u00b1 6.1",
+        "formatted_ci": "[54.7, 69.8]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 62.28,
+        "std": 6.09,
+        "sem": 2.72,
+        "ci_margin": 7.56,
+        "ci_low": 54.72,
+        "ci_high": 69.84,
+        "formatted_sd": "62.3 \u00b1 6.1",
+        "formatted_ci": "[54.7, 69.8]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 23.03,
+        "std": 4.97,
+        "sem": 2.22,
+        "ci_margin": 6.17,
+        "ci_low": 16.86,
+        "ci_high": 29.2,
+        "formatted_sd": "23.0 \u00b1 5.0",
+        "formatted_ci": "[16.9, 29.2]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 23.03,
+        "std": 4.97,
+        "sem": 2.22,
+        "ci_margin": 6.17,
+        "ci_low": 16.86,
+        "ci_high": 29.2,
+        "formatted_sd": "23.0 \u00b1 5.0",
+        "formatted_ci": "[16.9, 29.2]"
+      },
+      "t_stat": -11.49,
+      "p_value": 0.00032767423602686035,
+      "significance": "***",
+      "cohen_d": 5.14,
+      "raw_qaoa_reds": [
+        18.697449898114623,
+        19.319946357989846,
+        29.329542825382227,
+        20.364175298385817,
+        27.438615322688843
+      ],
+      "raw_pso_reds": [
+        18.697449898114623,
+        19.319946357989846,
+        29.329542825382227,
+        20.364175298385817,
+        27.438615322688843
+      ]
+    },
+    {
+      "scenario_name": "3. Non-Adjacent Dual Arterial Bottleneck",
+      "init_stats": {
+        "n": 5,
+        "mean": 81.94,
+        "std": 2.74,
+        "sem": 1.22,
+        "ci_margin": 3.4,
+        "ci_low": 78.54,
+        "ci_high": 85.34,
+        "formatted_sd": "81.9 \u00b1 2.7",
+        "formatted_ci": "[78.5, 85.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 64.77,
+        "std": 4.83,
+        "sem": 2.16,
+        "ci_margin": 5.99,
+        "ci_low": 58.78,
+        "ci_high": 70.77,
+        "formatted_sd": "64.8 \u00b1 4.8",
+        "formatted_ci": "[58.8, 70.8]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 62.82,
+        "std": 3.58,
+        "sem": 1.6,
+        "ci_margin": 4.44,
+        "ci_low": 58.38,
+        "ci_high": 67.26,
+        "formatted_sd": "62.8 \u00b1 3.6",
+        "formatted_ci": "[58.4, 67.3]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 21.02,
+        "std": 3.94,
+        "sem": 1.76,
+        "ci_margin": 4.9,
+        "ci_low": 16.12,
+        "ci_high": 25.92,
+        "formatted_sd": "21.0 \u00b1 3.9",
+        "formatted_ci": "[16.1, 25.9]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 23.38,
+        "std": 1.95,
+        "sem": 0.87,
+        "ci_margin": 2.42,
+        "ci_low": 20.96,
+        "ci_high": 25.8,
+        "formatted_sd": "23.4 \u00b1 2.0",
+        "formatted_ci": "[21.0, 25.8]"
+      },
+      "t_stat": -38.45,
+      "p_value": 2.7338200393764455e-06,
+      "significance": "***",
+      "cohen_d": 17.19,
+      "raw_qaoa_reds": [
+        23.993106919006298,
+        20.431940192896366,
+        25.491505304547818,
+        22.56971989992067,
+        24.410242059605448
+      ],
+      "raw_pso_reds": [
+        15.986762844463417,
+        20.431940192896366,
+        25.491505304547818,
+        18.77936779154207,
+        24.410242059605448
+      ]
+    },
+    {
+      "scenario_name": "4. Radial Inbound Morning Commute Peak",
+      "init_stats": {
+        "n": 5,
+        "mean": 77.9,
+        "std": 3.11,
+        "sem": 1.39,
+        "ci_margin": 3.86,
+        "ci_low": 74.04,
+        "ci_high": 81.76,
+        "formatted_sd": "77.9 \u00b1 3.1",
+        "formatted_ci": "[74.0, 81.8]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 60.82,
+        "std": 4.1,
+        "sem": 1.84,
+        "ci_margin": 5.1,
+        "ci_low": 55.72,
+        "ci_high": 65.92,
+        "formatted_sd": "60.8 \u00b1 4.1",
+        "formatted_ci": "[55.7, 65.9]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 60.47,
+        "std": 4.09,
+        "sem": 1.83,
+        "ci_margin": 5.08,
+        "ci_low": 55.38,
+        "ci_high": 65.55,
+        "formatted_sd": "60.5 \u00b1 4.1",
+        "formatted_ci": "[55.4, 65.6]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 21.75,
+        "std": 7.2,
+        "sem": 3.22,
+        "ci_margin": 8.95,
+        "ci_low": 12.81,
+        "ci_high": 30.7,
+        "formatted_sd": "21.8 \u00b1 7.2",
+        "formatted_ci": "[12.8, 30.7]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 22.23,
+        "std": 6.94,
+        "sem": 3.11,
+        "ci_margin": 8.62,
+        "ci_low": 13.6,
+        "ci_high": 30.85,
+        "formatted_sd": "22.2 \u00b1 6.9",
+        "formatted_ci": "[13.6, 30.8]"
+      },
+      "t_stat": -6.58,
+      "p_value": 0.0027541331329919636,
+      "significance": "**",
+      "cohen_d": 2.94,
+      "raw_qaoa_reds": [
+        11.932912883775721,
+        30.42903179260256,
+        25.453756598452525,
+        23.729360535797166,
+        19.582283969409314
+      ],
+      "raw_pso_reds": [
+        11.932912883775721,
+        30.42903179260256,
+        25.453756598452525,
+        23.551154434645067,
+        17.394642983439926
+      ]
+    },
+    {
+      "scenario_name": "5. Radial Outbound Evening Egress Surge",
+      "init_stats": {
+        "n": 5,
+        "mean": 83.84,
+        "std": 2.35,
+        "sem": 1.05,
+        "ci_margin": 2.92,
+        "ci_low": 80.92,
+        "ci_high": 86.76,
+        "formatted_sd": "83.8 \u00b1 2.4",
+        "formatted_ci": "[80.9, 86.8]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 66.49,
+        "std": 5.04,
+        "sem": 2.25,
+        "ci_margin": 6.26,
+        "ci_low": 60.24,
+        "ci_high": 72.75,
+        "formatted_sd": "66.5 \u00b1 5.0",
+        "formatted_ci": "[60.2, 72.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 66.29,
+        "std": 4.9,
+        "sem": 2.19,
+        "ci_margin": 6.09,
+        "ci_low": 60.2,
+        "ci_high": 72.38,
+        "formatted_sd": "66.3 \u00b1 4.9",
+        "formatted_ci": "[60.2, 72.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 20.78,
+        "std": 3.89,
+        "sem": 1.74,
+        "ci_margin": 4.83,
+        "ci_low": 15.95,
+        "ci_high": 25.61,
+        "formatted_sd": "20.8 \u00b1 3.9",
+        "formatted_ci": "[16.0, 25.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 21.02,
+        "std": 3.76,
+        "sem": 1.68,
+        "ci_margin": 4.67,
+        "ci_low": 16.35,
+        "ci_high": 25.69,
+        "formatted_sd": "21.0 \u00b1 3.8",
+        "formatted_ci": "[16.4, 25.7]"
+      },
+      "t_stat": -15.1,
+      "p_value": 0.00011222990174471511,
+      "significance": "***",
+      "cohen_d": 6.75,
+      "raw_qaoa_reds": [
+        22.02943895328166,
+        27.13283828382837,
+        19.52762832876527,
+        18.195211461439374,
+        18.208430913348945
+      ],
+      "raw_pso_reds": [
+        21.929577769601995,
+        27.13283828382837,
+        18.43601237384397,
+        18.195211461439374,
+        18.208430913348945
+      ]
+    },
+    {
+      "scenario_name": "6. Commercial District Central Rush",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.27,
+        "std": 4.77,
+        "sem": 2.13,
+        "ci_margin": 5.92,
+        "ci_low": 76.35,
+        "ci_high": 88.2,
+        "formatted_sd": "82.3 \u00b1 4.8",
+        "formatted_ci": "[76.3, 88.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 70.61,
+        "std": 2.98,
+        "sem": 1.33,
+        "ci_margin": 3.7,
+        "ci_low": 66.92,
+        "ci_high": 74.31,
+        "formatted_sd": "70.6 \u00b1 3.0",
+        "formatted_ci": "[66.9, 74.3]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 69.73,
+        "std": 3.37,
+        "sem": 1.51,
+        "ci_margin": 4.19,
+        "ci_low": 65.54,
+        "ci_high": 73.92,
+        "formatted_sd": "69.7 \u00b1 3.4",
+        "formatted_ci": "[65.5, 73.9]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 13.78,
+        "std": 8.69,
+        "sem": 3.89,
+        "ci_margin": 10.79,
+        "ci_low": 2.99,
+        "ci_high": 24.57,
+        "formatted_sd": "13.8 \u00b1 8.7",
+        "formatted_ci": "[3.0, 24.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 14.83,
+        "std": 9.23,
+        "sem": 4.13,
+        "ci_margin": 11.46,
+        "ci_low": 3.37,
+        "ci_high": 26.29,
+        "formatted_sd": "14.8 \u00b1 9.2",
+        "formatted_ci": "[3.4, 26.3]"
+      },
+      "t_stat": -3.6,
+      "p_value": 0.02280652574004026,
+      "significance": "*",
+      "cohen_d": 1.61,
+      "raw_qaoa_reds": [
+        16.39645395735165,
+        -0.7548902285744585,
+        15.662303792024751,
+        23.361260053619297,
+        19.486450300470157
+      ],
+      "raw_pso_reds": [
+        13.343582780928026,
+        -0.7548902285744585,
+        15.662303792024751,
+        21.164963136729227,
+        19.486450300470157
+      ]
+    },
+    {
+      "scenario_name": "7. Construction Capacity Reduction Incident",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.66,
+        "std": 4.49,
+        "sem": 2.01,
+        "ci_margin": 5.57,
+        "ci_low": 74.09,
+        "ci_high": 85.23,
+        "formatted_sd": "79.7 \u00b1 4.5",
+        "formatted_ci": "[74.1, 85.2]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 52.3,
+        "std": 3.6,
+        "sem": 1.61,
+        "ci_margin": 4.47,
+        "ci_low": 47.83,
+        "ci_high": 56.76,
+        "formatted_sd": "52.3 \u00b1 3.6",
+        "formatted_ci": "[47.8, 56.8]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 52.3,
+        "std": 3.6,
+        "sem": 1.61,
+        "ci_margin": 4.47,
+        "ci_low": 47.83,
+        "ci_high": 56.76,
+        "formatted_sd": "52.3 \u00b1 3.6",
+        "formatted_ci": "[47.8, 56.8]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 34.15,
+        "std": 6.39,
+        "sem": 2.86,
+        "ci_margin": 7.93,
+        "ci_low": 26.21,
+        "ci_high": 42.08,
+        "formatted_sd": "34.1 \u00b1 6.4",
+        "formatted_ci": "[26.2, 42.1]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 34.15,
+        "std": 6.39,
+        "sem": 2.86,
+        "ci_margin": 7.93,
+        "ci_low": 26.21,
+        "ci_high": 42.08,
+        "formatted_sd": "34.1 \u00b1 6.4",
+        "formatted_ci": "[26.2, 42.1]"
+      },
+      "t_stat": -9.67,
+      "p_value": 0.0006401747415940854,
+      "significance": "***",
+      "cohen_d": 4.32,
+      "raw_qaoa_reds": [
+        34.3822202662559,
+        37.94159618530507,
+        30.827067669172937,
+        25.498604415123054,
+        42.0802636680884
+      ],
+      "raw_pso_reds": [
+        34.3822202662559,
+        37.94159618530507,
+        30.827067669172937,
+        25.498604415123054,
+        42.0802636680884
+      ]
+    },
+    {
+      "scenario_name": "8. Stadium Special Event Outflow Spike",
+      "init_stats": {
+        "n": 5,
+        "mean": 83.52,
+        "std": 1.23,
+        "sem": 0.55,
+        "ci_margin": 1.53,
+        "ci_low": 82.0,
+        "ci_high": 85.05,
+        "formatted_sd": "83.5 \u00b1 1.2",
+        "formatted_ci": "[82.0, 85.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 63.17,
+        "std": 4.81,
+        "sem": 2.15,
+        "ci_margin": 5.97,
+        "ci_low": 57.2,
+        "ci_high": 69.14,
+        "formatted_sd": "63.2 \u00b1 4.8",
+        "formatted_ci": "[57.2, 69.1]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 61.33,
+        "std": 2.44,
+        "sem": 1.09,
+        "ci_margin": 3.03,
+        "ci_low": 58.3,
+        "ci_high": 64.36,
+        "formatted_sd": "61.3 \u00b1 2.4",
+        "formatted_ci": "[58.3, 64.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 24.38,
+        "std": 5.53,
+        "sem": 2.47,
+        "ci_margin": 6.87,
+        "ci_low": 17.51,
+        "ci_high": 31.25,
+        "formatted_sd": "24.4 \u00b1 5.5",
+        "formatted_ci": "[17.5, 31.2]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 26.57,
+        "std": 2.79,
+        "sem": 1.25,
+        "ci_margin": 3.46,
+        "ci_low": 23.1,
+        "ci_high": 30.03,
+        "formatted_sd": "26.6 \u00b1 2.8",
+        "formatted_ci": "[23.1, 30.0]"
+      },
+      "t_stat": -21.12,
+      "p_value": 2.97156553345998e-05,
+      "significance": "***",
+      "cohen_d": 9.44,
+      "raw_qaoa_reds": [
+        27.522193211488254,
+        22.27544729206963,
+        28.523562943300995,
+        29.12199285218968,
+        25.384231536926155
+      ],
+      "raw_pso_reds": [
+        27.522193211488254,
+        18.789720917380496,
+        28.523562943300995,
+        29.12199285218968,
+        17.926279793354468
+      ]
+    },
+    {
+      "scenario_name": "9. School Zone Perimeter Dropoff",
+      "init_stats": {
+        "n": 5,
+        "mean": 81.92,
+        "std": 3.81,
+        "sem": 1.7,
+        "ci_margin": 4.73,
+        "ci_low": 77.19,
+        "ci_high": 86.66,
+        "formatted_sd": "81.9 \u00b1 3.8",
+        "formatted_ci": "[77.2, 86.7]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 65.93,
+        "std": 6.1,
+        "sem": 2.73,
+        "ci_margin": 7.57,
+        "ci_low": 58.36,
+        "ci_high": 73.51,
+        "formatted_sd": "65.9 \u00b1 6.1",
+        "formatted_ci": "[58.4, 73.5]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 65.55,
+        "std": 5.76,
+        "sem": 2.58,
+        "ci_margin": 7.16,
+        "ci_low": 58.4,
+        "ci_high": 72.71,
+        "formatted_sd": "65.6 \u00b1 5.8",
+        "formatted_ci": "[58.4, 72.7]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 19.56,
+        "std": 5.69,
+        "sem": 2.54,
+        "ci_margin": 7.06,
+        "ci_low": 12.5,
+        "ci_high": 26.62,
+        "formatted_sd": "19.6 \u00b1 5.7",
+        "formatted_ci": "[12.5, 26.6]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 20.01,
+        "std": 5.35,
+        "sem": 2.39,
+        "ci_margin": 6.64,
+        "ci_low": 13.37,
+        "ci_high": 26.65,
+        "formatted_sd": "20.0 \u00b1 5.3",
+        "formatted_ci": "[13.4, 26.7]"
+      },
+      "t_stat": -8.29,
+      "p_value": 0.0011576758333940703,
+      "significance": "**",
+      "cohen_d": 3.71,
+      "raw_qaoa_reds": [
+        11.946590554926757,
+        26.197743080712943,
+        19.729525640145546,
+        23.180440055440066,
+        18.999614388806265
+      ],
+      "raw_pso_reds": [
+        11.192854682348317,
+        26.197743080712943,
+        18.205533054163524,
+        23.180440055440066,
+        18.999614388806265
+      ]
+    },
+    {
+      "scenario_name": "10. Asymmetric Directional Flow Pattern",
+      "init_stats": {
+        "n": 5,
+        "mean": 81.12,
+        "std": 3.55,
+        "sem": 1.59,
+        "ci_margin": 4.4,
+        "ci_low": 76.71,
+        "ci_high": 85.52,
+        "formatted_sd": "81.1 \u00b1 3.5",
+        "formatted_ci": "[76.7, 85.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 66.54,
+        "std": 3.68,
+        "sem": 1.64,
+        "ci_margin": 4.57,
+        "ci_low": 61.98,
+        "ci_high": 71.11,
+        "formatted_sd": "66.5 \u00b1 3.7",
+        "formatted_ci": "[62.0, 71.1]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 65.56,
+        "std": 3.39,
+        "sem": 1.52,
+        "ci_margin": 4.21,
+        "ci_low": 61.35,
+        "ci_high": 69.77,
+        "formatted_sd": "65.6 \u00b1 3.4",
+        "formatted_ci": "[61.4, 69.8]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 17.93,
+        "std": 3.92,
+        "sem": 1.75,
+        "ci_margin": 4.86,
+        "ci_low": 13.07,
+        "ci_high": 22.79,
+        "formatted_sd": "17.9 \u00b1 3.9",
+        "formatted_ci": "[13.1, 22.8]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 19.08,
+        "std": 4.92,
+        "sem": 2.2,
+        "ci_margin": 6.11,
+        "ci_low": 12.97,
+        "ci_high": 25.2,
+        "formatted_sd": "19.1 \u00b1 4.9",
+        "formatted_ci": "[13.0, 25.2]"
+      },
+      "t_stat": -8.0,
+      "p_value": 0.0013265616388249922,
+      "significance": "**",
+      "cohen_d": 3.58,
+      "raw_qaoa_reds": [
+        23.675538656527248,
+        17.60926993275697,
+        24.481841184788276,
+        16.86260801620307,
+        12.7846903878338
+      ],
+      "raw_pso_reds": [
+        23.675538656527248,
+        17.60926993275697,
+        18.71818486269257,
+        16.86260801620307,
+        12.7846903878338
+      ]
+    },
+    {
+      "scenario_name": "11. Inclement Weather Network Slowdown",
+      "init_stats": {
+        "n": 5,
+        "mean": 82.57,
+        "std": 3.05,
+        "sem": 1.36,
+        "ci_margin": 3.78,
+        "ci_low": 78.78,
+        "ci_high": 86.35,
+        "formatted_sd": "82.6 \u00b1 3.0",
+        "formatted_ci": "[78.8, 86.3]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 90.02,
+        "std": 4.01,
+        "sem": 1.79,
+        "ci_margin": 4.98,
+        "ci_low": 85.04,
+        "ci_high": 94.99,
+        "formatted_sd": "90.0 \u00b1 4.0",
+        "formatted_ci": "[85.0, 95.0]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 89.75,
+        "std": 3.71,
+        "sem": 1.66,
+        "ci_margin": 4.6,
+        "ci_low": 85.15,
+        "ci_high": 94.35,
+        "formatted_sd": "89.7 \u00b1 3.7",
+        "formatted_ci": "[85.1, 94.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": -9.15,
+        "std": 6.4,
+        "sem": 2.86,
+        "ci_margin": 7.95,
+        "ci_low": -17.1,
+        "ci_high": -1.2,
+        "formatted_sd": "-9.2 \u00b1 6.4",
+        "formatted_ci": "[-17.1, -1.2]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": -8.84,
+        "std": 6.37,
+        "sem": 2.85,
+        "ci_margin": 7.91,
+        "ci_low": -16.75,
+        "ci_high": -0.93,
+        "formatted_sd": "-8.8 \u00b1 6.4",
+        "formatted_ci": "[-16.7, -0.9]"
+      },
+      "t_stat": 3.17,
+      "p_value": 0.03389818253835957,
+      "significance": "*",
+      "cohen_d": -1.42,
+      "raw_qaoa_reds": [
+        -15.338216806885214,
+        -8.540624577531412,
+        -8.67625067971726,
+        -12.944618599791003,
+        1.3180741910023634
+      ],
+      "raw_pso_reds": [
+        -15.338216806885214,
+        -8.540624577531412,
+        -10.247417074497035,
+        -12.944618599791003,
+        1.3180741910023634
+      ]
+    },
+    {
+      "scenario_name": "12. Cross-Town Transit Corridor Surge",
+      "init_stats": {
+        "n": 5,
+        "mean": 81.55,
+        "std": 5.6,
+        "sem": 2.51,
+        "ci_margin": 6.96,
+        "ci_low": 74.59,
+        "ci_high": 88.51,
+        "formatted_sd": "81.6 \u00b1 5.6",
+        "formatted_ci": "[74.6, 88.5]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 62.84,
+        "std": 3.92,
+        "sem": 1.75,
+        "ci_margin": 4.87,
+        "ci_low": 57.97,
+        "ci_high": 67.71,
+        "formatted_sd": "62.8 \u00b1 3.9",
+        "formatted_ci": "[58.0, 67.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 60.82,
+        "std": 4.48,
+        "sem": 2.0,
+        "ci_margin": 5.56,
+        "ci_low": 55.26,
+        "ci_high": 66.38,
+        "formatted_sd": "60.8 \u00b1 4.5",
+        "formatted_ci": "[55.3, 66.4]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 22.73,
+        "std": 5.91,
+        "sem": 2.64,
+        "ci_margin": 7.33,
+        "ci_low": 15.4,
+        "ci_high": 30.06,
+        "formatted_sd": "22.7 \u00b1 5.9",
+        "formatted_ci": "[15.4, 30.1]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 25.35,
+        "std": 3.91,
+        "sem": 1.75,
+        "ci_margin": 4.86,
+        "ci_low": 20.49,
+        "ci_high": 30.21,
+        "formatted_sd": "25.4 \u00b1 3.9",
+        "formatted_ci": "[20.5, 30.2]"
+      },
+      "t_stat": -11.66,
+      "p_value": 0.0003094184843813117,
+      "significance": "***",
+      "cohen_d": 5.21,
+      "raw_qaoa_reds": [
+        26.320300652732897,
+        31.606980141454176,
+        22.024730109632255,
+        24.527450680532187,
+        22.27992865386632
+      ],
+      "raw_pso_reds": [
+        24.86620388248923,
+        31.606980141454176,
+        22.024730109632255,
+        18.68856789333925,
+        16.458757848350793
+      ]
+    },
+    {
+      "scenario_name": "13. Late Night Heavy Freight Arterial",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.4,
+        "std": 3.76,
+        "sem": 1.68,
+        "ci_margin": 4.67,
+        "ci_low": 74.74,
+        "ci_high": 84.07,
+        "formatted_sd": "79.4 \u00b1 3.8",
+        "formatted_ci": "[74.7, 84.1]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 63.43,
+        "std": 4.39,
+        "sem": 1.97,
+        "ci_margin": 5.46,
+        "ci_low": 57.97,
+        "ci_high": 68.89,
+        "formatted_sd": "63.4 \u00b1 4.4",
+        "formatted_ci": "[58.0, 68.9]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 63.43,
+        "std": 4.39,
+        "sem": 1.97,
+        "ci_margin": 5.46,
+        "ci_low": 57.97,
+        "ci_high": 68.89,
+        "formatted_sd": "63.4 \u00b1 4.4",
+        "formatted_ci": "[58.0, 68.9]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 19.99,
+        "std": 6.34,
+        "sem": 2.83,
+        "ci_margin": 7.87,
+        "ci_low": 12.12,
+        "ci_high": 27.85,
+        "formatted_sd": "20.0 \u00b1 6.3",
+        "formatted_ci": "[12.1, 27.9]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 19.99,
+        "std": 6.34,
+        "sem": 2.83,
+        "ci_margin": 7.87,
+        "ci_low": 12.12,
+        "ci_high": 27.85,
+        "formatted_sd": "20.0 \u00b1 6.3",
+        "formatted_ci": "[12.1, 27.9]"
+      },
+      "t_stat": -6.38,
+      "p_value": 0.0031023535676855374,
+      "significance": "**",
+      "cohen_d": 2.85,
+      "raw_qaoa_reds": [
+        13.858995276942887,
+        20.252680882534218,
+        30.504804166582776,
+        16.805764495079668,
+        18.509290540540544
+      ],
+      "raw_pso_reds": [
+        13.858995276942887,
+        20.252680882534218,
+        30.504804166582776,
+        16.805764495079668,
+        18.509290540540544
+      ]
+    },
+    {
+      "scenario_name": "14. Distributed Triple Bottleneck Peak",
+      "init_stats": {
+        "n": 5,
+        "mean": 85.06,
+        "std": 0.74,
+        "sem": 0.33,
+        "ci_margin": 0.92,
+        "ci_low": 84.14,
+        "ci_high": 85.98,
+        "formatted_sd": "85.1 \u00b1 0.7",
+        "formatted_ci": "[84.1, 86.0]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 77.03,
+        "std": 7.78,
+        "sem": 3.48,
+        "ci_margin": 9.66,
+        "ci_low": 67.37,
+        "ci_high": 86.69,
+        "formatted_sd": "77.0 \u00b1 7.8",
+        "formatted_ci": "[67.4, 86.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 75.94,
+        "std": 5.76,
+        "sem": 2.58,
+        "ci_margin": 7.15,
+        "ci_low": 68.79,
+        "ci_high": 83.09,
+        "formatted_sd": "75.9 \u00b1 5.8",
+        "formatted_ci": "[68.8, 83.1]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 9.48,
+        "std": 8.6,
+        "sem": 3.85,
+        "ci_margin": 10.68,
+        "ci_low": -1.2,
+        "ci_high": 20.16,
+        "formatted_sd": "9.5 \u00b1 8.6",
+        "formatted_ci": "[-1.2, 20.2]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 10.76,
+        "std": 6.17,
+        "sem": 2.76,
+        "ci_margin": 7.66,
+        "ci_low": 3.1,
+        "ci_high": 18.42,
+        "formatted_sd": "10.8 \u00b1 6.2",
+        "formatted_ci": "[3.1, 18.4]"
+      },
+      "t_stat": -3.94,
+      "p_value": 0.01702952691806214,
+      "significance": "*",
+      "cohen_d": 1.76,
+      "raw_qaoa_reds": [
+        18.71024073843084,
+        9.784097580066543,
+        9.183860895120304,
+        14.013738127544102,
+        2.095683393170245
+      ],
+      "raw_pso_reds": [
+        18.71024073843084,
+        9.784097580066543,
+        9.183860895120304,
+        14.013738127544102,
+        -4.301578024547056
+      ]
+    },
+    {
+      "scenario_name": "15. Off-Peak Nighttime Low Baseline",
+      "init_stats": {
+        "n": 5,
+        "mean": 79.48,
+        "std": 2.64,
+        "sem": 1.18,
+        "ci_margin": 3.28,
+        "ci_low": 76.2,
+        "ci_high": 82.76,
+        "formatted_sd": "79.5 \u00b1 2.6",
+        "formatted_ci": "[76.2, 82.8]"
+      },
+      "pso_stats": {
+        "n": 5,
+        "mean": 58.43,
+        "std": 1.79,
+        "sem": 0.8,
+        "ci_margin": 2.22,
+        "ci_low": 56.21,
+        "ci_high": 60.65,
+        "formatted_sd": "58.4 \u00b1 1.8",
+        "formatted_ci": "[56.2, 60.7]"
+      },
+      "qaoa_stats": {
+        "n": 5,
+        "mean": 58.04,
+        "std": 1.2,
+        "sem": 0.54,
+        "ci_margin": 1.49,
+        "ci_low": 56.55,
+        "ci_high": 59.54,
+        "formatted_sd": "58.0 \u00b1 1.2",
+        "formatted_ci": "[56.5, 59.5]"
+      },
+      "pso_red_stats": {
+        "n": 5,
+        "mean": 26.43,
+        "std": 3.03,
+        "sem": 1.36,
+        "ci_margin": 3.77,
+        "ci_low": 22.66,
+        "ci_high": 30.2,
+        "formatted_sd": "26.4 \u00b1 3.0",
+        "formatted_ci": "[22.7, 30.2]"
+      },
+      "qaoa_red_stats": {
+        "n": 5,
+        "mean": 26.92,
+        "std": 2.63,
+        "sem": 1.18,
+        "ci_margin": 3.27,
+        "ci_low": 23.65,
+        "ci_high": 30.18,
+        "formatted_sd": "26.9 \u00b1 2.6",
+        "formatted_ci": "[23.6, 30.2]"
+      },
+      "t_stat": -17.19,
+      "p_value": 6.719636774056998e-05,
+      "significance": "***",
+      "cohen_d": 7.69,
+      "raw_qaoa_reds": [
+        25.223816302067725,
+        31.40603194989039,
+        24.955599347979458,
+        26.980427839263164,
+        26.01245563983019
+      ],
+      "raw_pso_reds": [
+        25.223816302067725,
+        31.40603194989039,
+        24.955599347979458,
+        26.980427839263164,
+        23.57823791961985
+      ]
+    }
+  ]
+}

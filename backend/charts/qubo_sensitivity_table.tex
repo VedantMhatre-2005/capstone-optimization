@@ -1,0 +1,28 @@
+% Academic LaTeX Sensitivity Analysis Table for QUBO Hyperparameters
+\begin{table}[h!]
+\centering
+\caption{QUBO Hyperparameter Sensitivity Analysis & Ablation Study (4-Node Network, 15 Scenarios)}
+\label{tab:qubo_sensitivity}
+\begin{tabular}{c c c c c}
+\hline\hline
+Ablation Factor & Value & Mean Peak Reduction (\%) & Standard Dev (\%) & Avg Active Qubits ($N$) \\
+\hline
+$\theta_{\text{high}}$ & 0.50 & 18.94\% & \pm 6.66\% & 6.2 \\
+$\theta_{\text{high}}$ & 0.55 & 18.94\% & \pm 6.66\% & 6.2 \\
+$\theta_{\text{high}}$ & 0.60 & 18.94\% & \pm 6.66\% & 6.2 \\
+$\theta_{\text{high}}$ & 0.65 & 18.94\% & \pm 6.66\% & 6.2 \\
+$\theta_{\text{high}}$ & 0.70 & 18.94\% & \pm 6.66\% & 6.2 \\
+\hline
+Target $\delta$ & 0.40 & 13.76\% & \pm 6.22\% & -- \\
+Target $\delta$ & 0.45 & 17.61\% & \pm 8.28\% & -- \\
+Target $\delta$ & 0.50 & 18.94\% & \pm 6.66\% & -- \\
+Target $\delta$ & 0.55 & 23.01\% & \pm 5.89\% & -- \\
+\hline
+Cap $N_{\text{cap}}$ & 4 & 14.94\% & \pm 12.65\% & 3.8 \\
+Cap $N_{\text{cap}}$ & 6 & 19.77\% & \pm 6.34\% & 5.0 \\
+Cap $N_{\text{cap}}$ & 8 & 20.56\% & \pm 5.71\% & 5.8 \\
+Cap $N_{\text{cap}}$ & 10 & 18.94\% & \pm 6.66\% & 6.2 \\
+Cap $N_{\text{cap}}$ & 12 & 18.94\% & \pm 6.66\% & 6.2 \\
+\hline\hline
+\end{tabular}
+\end{table}

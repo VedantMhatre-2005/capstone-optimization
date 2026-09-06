@@ -11,8 +11,12 @@ import os
 import sys
 import time
 import itertools
+import warnings
+warnings.filterwarnings("ignore")
 import numpy as np
 import networkx as nx
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from typing import Dict, List, Tuple, Any
 
@@ -61,7 +65,7 @@ def plot_topology_pso_convergences(all_topology_results: Dict[str, List[Dict[str
     output_path = "pso_convergence_4_5_6_nodes.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"\n[INFO] Convergence graph successfully saved to: {os.path.abspath(output_path)}")
-    plt.show()
+    plt.close()
 
 
 
@@ -207,7 +211,7 @@ def evaluate_and_verify_scenario(topology_name: str, G: nx.Graph, scenario: Dict
     qubo_problem = build_qubo(variables, norm_caps, occupancy, target=0.50, packet_size=150.0)
 
     t_qaoa_start = time.perf_counter()
-    qaoa_sol = solve_qaoa(qubo_problem, packets=packets, capacities=norm_caps, initial_loads=norm_loads, packet_size=150.0, maxiter=50)
+    qaoa_sol = solve_qaoa(qubo_problem, packets=packets, capacities=norm_caps, initial_loads=norm_loads, packet_size=150.0, maxiter=50, use_brute_force=False)
     t_qaoa_end = time.perf_counter()
     qaoa_latency_ms = (t_qaoa_end - t_qaoa_start) * 1000.0
 

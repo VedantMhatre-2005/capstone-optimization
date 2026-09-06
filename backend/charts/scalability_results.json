@@ -1,0 +1,50 @@
+[
+  {
+    "topology": "4-Node Mesh",
+    "num_nodes": 4,
+    "num_edges": 6,
+    "avg_qubits": 7.6,
+    "avg_qaoa_depth_p1": 56,
+    "avg_qaoa_depth_p3": 167,
+    "avg_1q_gates_p1": 15,
+    "avg_2q_cnot_p1": 27,
+    "avg_qaoa_time_ms": 5.86,
+    "bpso_particles": 30,
+    "bpso_iterations": 20,
+    "bpso_fitness_evals": 600,
+    "avg_bpso_time_ms": 15.78,
+    "avg_optimality_gap": 0.0
+  },
+  {
+    "topology": "5-Node Mesh",
+    "num_nodes": 5,
+    "num_edges": 10,
+    "avg_qubits": 7.8,
+    "avg_qaoa_depth_p1": 56,
+    "avg_qaoa_depth_p3": 169,
+    "avg_1q_gates_p1": 16,
+    "avg_2q_cnot_p1": 27,
+    "avg_qaoa_time_ms": 4.24,
+    "bpso_particles": 30,
+    "bpso_iterations": 20,
+    "bpso_fitness_evals": 600,
+    "avg_bpso_time_ms": 17.99,
+    "avg_optimality_gap": 0.0
+  },
+  {
+    "topology": "6-Node Mesh",
+    "num_nodes": 6,
+    "num_edges": 15,
+    "avg_qubits": 7.8,
+    "avg_qaoa_depth_p1": 58,
+    "avg_qaoa_depth_p3": 173,
+    "avg_1q_gates_p1": 16,
+    "avg_2q_cnot_p1": 28,
+    "avg_qaoa_time_ms": 5.15,
+    "bpso_particles": 30,
+    "bpso_iterations": 20,
+    "bpso_fitness_evals": 600,
+    "avg_bpso_time_ms": 20.75,
+    "avg_optimality_gap": 0.0
+  }
+]
